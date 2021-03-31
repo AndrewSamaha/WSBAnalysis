@@ -7,7 +7,7 @@ In the January 2021, a large group of individual investors held together by an o
 Hence, the structure of this online community is worthy of investigation because of its ability to steer the behavior of a large number of invidivual investors in a way that negates contrary messaging of top-down institutional decision makers and actors. With that in mind, the purpose of this investigation is to gain an understanding of the structure of the online community, how it communicates about stock, how messages about stocks disseminate and maintain in the discourse, and so on.
 
 # The data
-As of 3/30/2021, the data set consisted of 1,550 submissions to r/WallStreetBets from 3/18/2021 to 3/30/2021.
+As of 3/30/2021, the data set consisted of 1,550 submissions to r/WallStreetBets from 3/18/2021 to 3/30/2021. These were scraped using the Reddit API using a tool I developed: [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
