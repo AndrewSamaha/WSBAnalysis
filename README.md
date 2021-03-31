@@ -16,4 +16,4 @@ A Sample:
 
 # The authors
 A total of 1203 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 2 or more posts.
-!(figures/pda_numposts.png)
+![Figure 1](figures/pda_numposts.png)
