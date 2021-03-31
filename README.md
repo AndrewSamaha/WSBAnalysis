@@ -6,7 +6,7 @@ In the January 2021, a large group of individual investors held together by an o
 
 Hence, the structure of this online community is worthy of investigation because of its ability to steer the behavior of a large number of invidivual investors in a way that negates contrary messaging of top-down institutional decision makers and actors. With that in mind, the purpose of this investigation is to gain an understanding of the structure of the online community, how it communicates about stock, how messages about stocks disseminate and maintain in the discourse, and so on.
 
-# The data
+# The Data
 As of 3/30/2021, the dataset consisted of 1,550 submissions to r/WallStreetBets from 3/18/2021 to 3/30/2021. These were scraped using the Reddit API using a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
@@ -18,3 +18,10 @@ A Sample:
 A total of 1203 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 2 or more posts.
 ![Figure 1](figures/pda_numposts.png)
 ![Figure 1](figures/pda_numposts_hist.png)
+
+# Technology Stack
+1. Python
+1. Jupyter Labs
+1. MongoDB (database)
+1. Matplotlib (visualization)
+1. Considering: https://mpastell.com/pweave/usage.html
