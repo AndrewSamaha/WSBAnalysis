@@ -21,7 +21,7 @@ A total of 1203 submission authors are represented in the data. The plot below s
 
 # Technology Stack
 1. Python
-1. Jupyter Labs
+1. Jupyter Labs (pda/eda)
 1. MongoDB (database)
 1. Matplotlib (visualization)
 1. Considering: https://mpastell.com/pweave/usage.html
