@@ -46,8 +46,8 @@ print(num)
 # Technology Stack
 1. Python
 1. Jupyter Labs (pda/eda)
-1. MongoDB (database)
+1. MongoDB/Docker (database)
 1. Matplotlib (visualization)
-1. PWeave (this readme)
+1. PWeave (CI/CD: this readme)
 
 _This file was compiled on <%print(datetime.date.today())%>._

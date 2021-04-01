@@ -1,3 +1,7 @@
+'''
+Helper functions for use in README.pmd and
+readme-testing.ipynb
+'''
 from pymongo import MongoClient
 import numpy as np
 import scipy.stats as stats
@@ -13,7 +17,8 @@ wsbs = None
 
 def setup_seaborn():
     # Pilfered from https://towardsdatascience.com/making-matplotlib-beautiful-by-default-d0d41e3534fd
-    sns.set(font='Franklin Gothic Book',
+    sns.set(
+        #font='Franklin Gothic Book',
         rc={
              'axes.axisbelow': False,
              'axes.edgecolor': 'lightgrey',
