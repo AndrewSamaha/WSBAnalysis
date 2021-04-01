@@ -48,7 +48,7 @@ Below is a histogram of submission deltas (seconds between posts) plotted with a
 ![Figure 3](figures/submissiondeltas.png)
 <% getsubmissiondeltas(save='figures/submissiondeltas.png') %>
 
-Removing deltas above 5000 gives us a smooth distribution that we can plot in arithmatic space:
+Removing deltas above 5000 gives us a smooth distribution that we can plot in arithmatic space:<br>
 ![Figure 3](figures/submissiondeltas_clean.png)
 <% getsubmissiondeltas(max=5000,log=False,save='figures/submissiondeltas_clean.png') %>
 
