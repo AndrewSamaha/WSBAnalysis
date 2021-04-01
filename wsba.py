@@ -91,7 +91,7 @@ def getdaterange():
     #print(first,last)
     return first,last
 
-def groupbyauthor(show=False):
+def groupbyauthor(show=False, min=0):
     '''
     returns num_unique_posters, poster_names, poster_counts
     '''
@@ -104,9 +104,12 @@ def groupbyauthor(show=False):
     for x in authors:
         if x['count'] > 1 and show:
             print(x)
-        i += 1
-        post_counts.append(x['count'])
-        posters.append(x['_id'])
+    
+        if x['count'] >= min:
+            i += 1
+            post_counts.append(x['count'])
+            posters.append(x['_id'])
+            
     return (i, posters, post_counts)
 
 def makeauthorfigures():
@@ -133,6 +136,22 @@ def makeauthorfigures():
     plt.tight_layout()
     plt.yscale('log')
     plt.savefig('figures/pda_numposts_hist.png')
+    
+    num, authors, counts = groupbyauthor(show=False, min=6)
+    fig, ax = plt.subplots(1,1, figsize=(6,6))
+    ax.barh(y=authors, width=counts)
+    ax.set_ylabel('Most Productive Posters')
+    ax.set_xlabel('Number of Posts')
+    plt.tight_layout()
+    plt.savefig('figures/pda_biggestposters.png')
+    
+def makebiggestauthortable():
+    num, authors, counts = groupbyauthor(show=False, min=6)
+    #https://www.reddit.com/user/Anal_Chem/
+    print('| Poster | Post Count |')
+    print('| ------ | ---------- |')
+    for author,count in zip(authors,counts):
+        print(f'| <a href=https://www.reddit.com/user/{author}/>{author}</a> | {count} |')
     
 if __name__ != '__main__':
     setup()
