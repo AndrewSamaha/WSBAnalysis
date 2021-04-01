@@ -136,7 +136,7 @@ def makeauthorfigures():
     plt.savefig('figures/pda_numposts.png')
     fig, ax = plt.subplots(1,1, figsize=(6,6))
     ax.hist(x=post_counts)
-    ax.set_ylabel('Number of Posters (n={num_unique_posters})')
+    ax.set_ylabel(f'Number of Posters (n={num_unique_posters})')
     ax.set_xlabel('Number of Posts')
     plt.tight_layout()
     plt.yscale('log')
