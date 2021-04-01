@@ -46,7 +46,7 @@ print(num)
 # Technology Stack
 1. Python
 1. Jupyter Labs (pda/eda)
-1. MongoDB/Docker (database)
+1. WSBScraper/MongoDB/Docker (backend)
 1. Matplotlib (visualization)
 1. PWeave (CI/CD: this readme)
 
