@@ -149,7 +149,7 @@ def makebiggestauthortable():
     num, authors, counts = groupbyauthor(show=False, min=6)
     #https://www.reddit.com/user/Anal_Chem/
     print('| Poster | Post Count |')
-    print('| ------ | ---------- |')
+    print('|--------|------------|')
     for author,count in zip(authors,counts):
         print(f'| <a href=https://www.reddit.com/user/{author}/>{author}</a> | {count} |')
     

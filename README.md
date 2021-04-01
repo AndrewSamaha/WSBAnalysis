@@ -24,15 +24,15 @@ A total of 1300 submission authors are represented in the data. The plot below s
 ![Figure 1](figures/pda_biggestposters.png)
 <Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
 | Poster | Post Count |
-| ------ | ---------- |
+|--------|------------|
 | <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 44 |
 | <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 |
 | <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 10 |
 | <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 9 |
 | <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 9 |
 | <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 9 |
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
 | <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
+| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
 | <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
 | <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 7 |
 | <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
