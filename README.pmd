@@ -33,6 +33,7 @@ print(num)
 ![Figure 1](figures/pda_numposts_hist.png)
 ![Figure 1](figures/pda_biggestposters.png)
 <% makeauthorfigures() %>
+
 <% makebiggestauthortable() %>
 
 # Technology Stack
