@@ -41,10 +41,7 @@ A total of 1300 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
 | <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
 
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
+
 
 # Technology Stack
 1. Python
