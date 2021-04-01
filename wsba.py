@@ -129,14 +129,14 @@ def makeauthorfigures():
         y=post_counts,
         s=10,
         alpha=.4)
-    ax.set_ylabel('Number of Posts')
+    ax.set_ylabel(f'Number of Posts (n={sum(post_counts)})')
     ax.set_ylim(ymin=0)
     ax.set_xlim(xmin=0,xmax=2)
     plt.tight_layout()
     plt.savefig('figures/pda_numposts.png')
     fig, ax = plt.subplots(1,1, figsize=(6,6))
     ax.hist(x=post_counts)
-    ax.set_ylabel('Number of Posters')
+    ax.set_ylabel('Number of Posters (n={num_unique_posters})')
     ax.set_xlabel('Number of Posts')
     plt.tight_layout()
     plt.yscale('log')
