@@ -156,6 +156,38 @@ def makebiggestauthortable():
     print('|--------|------------|')
     for author,count in zip(authors,counts):
         print(f'| <a href=https://www.reddit.com/user/{author}/>{author}</a> | {count} |')
+
+def getsubmissiondeltas():
+    submission_dates = wsbs.aggregate( [ {
+        '$project': {
+            'date': {
+                '$dateFromString': {
+                    'dateString': '$created_utc'
+                 }
+             }
+        }
+    }, { '$sort': { 'date' : -1} } ] )
     
+    i = 0
+    lastTime = None
+    deltas = []
+    for x in submission_dates:
+        i += 1
+        if lastTime != None:
+            delta = (lastTime - x['date']).seconds
+            deltas.append(delta)
+        #print(i, x)
+        lastTime = x['date']
+        #if i >= 30:
+        #    break
+    fig, ax = plt.subplots(1,1, figsize=(6,6))
+    ax.hist(x=deltas)
+    ax.set_ylabel(f'Number of Deltas (n={len(deltas)})')
+    ax.set_xlabel('Deltas (Seconds Between Submissions)')
+    plt.tight_layout()
+    plt.yscale('log')
+    plt.savefig('figures/submissiondeltas.png')
+    pass
+
 if __name__ != '__main__':
     setup()

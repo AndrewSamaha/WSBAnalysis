@@ -12,7 +12,7 @@ Hence, the structure of this online community is worthy of investigation because
 
 # The Data
 
-As of 04/01/21, the dataset consisted of 1719 submissions to r/WallStreetBets from 03/18/21 to 04/01/21. These were scraped using the Reddit API using a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 04/01/21, the dataset consisted of 1719 submissions to r/WallStreetBets from 03/18/21 to 04/01/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -22,23 +22,23 @@ A Sample:
 # The authors
 A total of 1322 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
 ![Figure 1](figures/pda_numposts.png)
-![Figure 1](figures/pda_numposts_hist.png)
-![Figure 1](figures/pda_biggestposters.png)
+![Figure 2](figures/pda_numposts_hist.png)
+![Figure 3](figures/pda_biggestposters.png)
 <Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
 
 | Poster | Post Count |
 |--------|------------|
 | <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 45 |
 | <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 |
-| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 10 |
 | <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 10 |
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 9 |
+| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 10 |
 | <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 9 |
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
+| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 9 |
 | <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 7 |
+| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
 | <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
+| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 7 |
+| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
 | <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
 | <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
 | <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
@@ -47,6 +47,11 @@ A total of 1322 submission authors are represented in the data. The plot below s
 1. Stocks are sometimes written in capital letters in the middle of a word
 1. Stocks are sometimes written beginning with a $ and ending with a space
 1. Only one of the big authors is a bot (AutoModerator) as determined by visual inspection of their posts.
+
+# Analysis of Submission Times
+Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis.
+![Figure 3](figures/pda_submissiondeltas.png)
+<Figure size 432x432 with 1 Axes>
 
 # Technology Stack
 1. Python

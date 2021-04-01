@@ -19,7 +19,7 @@ from wsba import *
 
 # The Data
 <% first,last = getdaterange() %>
-As of <%print(datetime.date.today().strftime('%m/%d/%y'))%>, the dataset consisted of <%= getnumsubmissions() %> submissions to r/WallStreetBets from <%print(first['date'].strftime('%m/%d/%y'))%> to <%print(last['date'].strftime('%m/%d/%y'))%>. These were scraped using the Reddit API using a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of <%print(datetime.date.today().strftime('%m/%d/%y'))%>, the dataset consisted of <%= getnumsubmissions() %> submissions to r/WallStreetBets from <%print(first['date'].strftime('%m/%d/%y'))%> to <%print(last['date'].strftime('%m/%d/%y'))%>. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -32,8 +32,8 @@ A total of <%
 print(num)
 %> submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
 ![Figure 1](figures/pda_numposts.png)
-![Figure 1](figures/pda_numposts_hist.png)
-![Figure 1](figures/pda_biggestposters.png)
+![Figure 2](figures/pda_numposts_hist.png)
+![Figure 3](figures/pda_biggestposters.png)
 <% makeauthorfigures() %>
 
 <% makebiggestauthortable() %>
@@ -42,6 +42,11 @@ print(num)
 1. Stocks are sometimes written in capital letters in the middle of a word
 1. Stocks are sometimes written beginning with a $ and ending with a space
 1. Only one of the big authors is a bot (AutoModerator) as determined by visual inspection of their posts.
+
+# Analysis of Submission Times
+Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis.
+![Figure 3](figures/pda_submissiondeltas.png)
+<% getsubmissiondeltas() %>
 
 # Technology Stack
 1. Python
