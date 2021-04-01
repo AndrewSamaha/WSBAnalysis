@@ -49,13 +49,20 @@ A total of 1322 submission authors are represented in the data. The plot below s
 1. Only one of the big authors is a bot (AutoModerator) as determined by visual inspection of their posts.
 
 # Analysis of Submission Post Times
-Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis. As can be seen in the figure, the majority of the posts occur less than 5,000 seconds apart, or ~83 minutes.
+Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis. As can be seen in the figure, the majority of the posts occur less than 5,000 seconds apart, or ~83 minutes. 
 ![Figure 3](figures/submissiondeltas.png)
 <Figure size 432x432 with 1 Axes>
 
 Removing deltas above 5000 gives us a smooth distribution that we can plot in arithmatic space:<br>
 ![Figure 3](figures/submissiondeltas_clean.png)
 <Figure size 432x432 with 1 Axes>
+
+Also, it's worth examining the left-side of the distribution more closely to make sure the geometric shape still holds true at shorter deltas.<br>
+![Figure 3](figures/submissiondeltas_left.png)
+<Figure size 432x432 with 1 Axes>
+
+On the other hand, it might not be reasonable to simply throw away large values. Let's look into why they might be happening -- perhaps they happen at a particular time of day?
+Group by hour of day
 
 # Technology Stack
 1. Python
