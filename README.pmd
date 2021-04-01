@@ -45,7 +45,7 @@ print(num)
 
 # Analysis of Submission Times
 Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis.
-![Figure 3](figures/pda_submissiondeltas.png)
+![Figure 3](figures/submissiondeltas.png)
 <% getsubmissiondeltas() %>
 
 # Technology Stack
