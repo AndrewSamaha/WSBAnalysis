@@ -43,6 +43,11 @@ A total of 1300 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
 | <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
 
+# Some Initial Observations
+1. Stocks are sometimes written in capital letters in the middle of a word
+1. Stocks are sometimes written beginning with a $ and ending with a space
+1. Only one of the big authors is a bot (AutoModerator) as determined by visual inspection of their posts.
+
 # Technology Stack
 1. Python
 1. Jupyter Labs (pda/eda)
