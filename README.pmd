@@ -43,10 +43,14 @@ print(num)
 1. Stocks are sometimes written beginning with a $ and ending with a space
 1. Only one of the big authors is a bot (AutoModerator) as determined by visual inspection of their posts.
 
-# Analysis of Submission Times
-Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis.
+# Analysis of Submission Post Times
+Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis. As can be seen in the figure, the majority of the posts occur less than 5,000 seconds apart, or ~83 minutes.
 ![Figure 3](figures/submissiondeltas.png)
-<% getsubmissiondeltas() %>
+<% getsubmissiondeltas(save='figures/submissiondeltas.png') %>
+
+Removing deltas above 5000 gives us a smooth distribution that we can plot in arithmatic space:
+![Figure 3](figures/submissiondeltas_clean.png)
+<% getsubmissiondeltas(max=5000,log=False,save='figures/submissiondeltas_clean.png') %>
 
 # Technology Stack
 1. Python

@@ -34,23 +34,27 @@ A total of 1322 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 10 |
 | <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 9 |
 | <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 9 |
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
 | <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
+| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
 | <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
 | <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
 | <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 7 |
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
 | <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
+| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
+| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
 
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word
 1. Stocks are sometimes written beginning with a $ and ending with a space
 1. Only one of the big authors is a bot (AutoModerator) as determined by visual inspection of their posts.
 
-# Analysis of Submission Times
-Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis.
+# Analysis of Submission Post Times
+Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis. As can be seen in the figure, the majority of the posts occur less than 5,000 seconds apart, or ~83 minutes.
 ![Figure 3](figures/submissiondeltas.png)
+<Figure size 432x432 with 1 Axes>
+
+Removing deltas above 5000 gives us a smooth distribution that we can plot in arithmatic space:
+![Figure 3](figures/submissiondeltas_clean.png)
 <Figure size 432x432 with 1 Axes>
 
 # Technology Stack
