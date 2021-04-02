@@ -52,45 +52,7 @@ A total of 1383 submission authors are represented in the data. The plot below s
 # Posts Per Hour
 Below is a graph of the total number of posts for each hour. Note the extreme outlier -- those took place during a four-hour period on March 24th, 2021 (shortly after 2000 hours on the graph below).<br>
 ![Figure 3](figures/posts_per_hour.png)
-0:13 [3, 3, 1, 2, 2, 10, 2, 2, 2, 6, 4, 3, 7]
-1:11 [1, 5, 1, 6, 5, 1, 3, 2, 1, 2, 1]
-2:10 [1, 2, 2, 1, 2, 1, 2, 3, 1, 3]
-3:12 [1, 1, 1, 1, 1, 4, 2, 2, 3, 1, 2, 1]
-4:9 [1, 1, 1, 1, 5, 3, 3, 1, 3]
-5:8 [2, 2, 4, 3, 2, 3, 1, 2]
-6:11 [5, 2, 2, 2, 6, 2, 4, 4, 2, 6, 1]
-7:8 [1, 2, 4, 5, 2, 3, 2, 3]
-8:13 [5, 1, 5, 4, 5, 4, 4, 1, 7, 5, 2, 3, 7]
-9:14 [6, 5, 1, 7, 6, 8, 5, 13, 6, 6, 2, 2, 4, 2]
-10:14 [14, 1, 6, 5, 14, 7, 20, 7, 1, 5, 5, 6, 5, 5]
-11:14 [9, 1, 3, 8, 9, 7, 5, 14, 4, 2, 11, 6, 10, 4]
-12:14 [5, 1, 3, 10, 9, 11, 14, 11, 3, 3, 10, 7, 5, 6]
-13:14 [4, 2, 3, 8, 6, 5, 9, 14, 3, 3, 4, 4, 3, 5]
-14:13 [8, 3, 3, 9, 10, 13, 4, 26, 7, 6, 6, 3, 12]
-15:15 [12, 6, 5, 4, 8, 8, 23, 21, 16, 3, 1, 6, 6, 10, 7]
-16:15 [13, 14, 11, 4, 12, 15, 72, 24, 11, 5, 3, 3, 8, 18, 13]
-17:15 [14, 12, 1, 4, 6, 10, 55, 18, 7, 1, 1, 7, 5, 14, 8]
-18:15 [11, 11, 4, 3, 5, 10, 32, 11, 7, 2, 1, 3, 3, 4, 6]
-19:15 [8, 6, 4, 3, 2, 3, 13, 3, 6, 1, 4, 4, 6, 13, 4]
-20:14 [7, 7, 2, 4, 5, 6, 14, 7, 7, 4, 3, 4, 4, 9]
-21:15 [6, 5, 2, 5, 4, 4, 17, 3, 10, 1, 1, 4, 9, 3, 4]
-22:13 [6, 7, 3, 2, 2, 6, 9, 9, 2, 5, 7, 6, 1]
-23:13 [5, 4, 1, 3, 3, 20, 12, 2, 3, 3, 4, 1, 4]
----------------------------------------------------------------------------NameError                                 Traceback (most recent call last)<ipython-input-1-801587f42ccc> in <module>
-----> 1 posts_per_hour(['figures/posts_per_hour.png','figures/avg_posts_per_hour.png'])
-~/RPP/Capstones/1/wsba.py in posts_per_hour(save)
-    444         plt.savefig(save[0])
-    445 
---> 446     bootstrap = calc_bootstrap(submissions_each_hour)
-    447     avg_submissions_each_hour = calc_avg_submissions_each_hour(submissions_each_hour, len(unique_days))
-    448     fig, ax = plt.subplots(1,1, figsize=(6,6))
-~/RPP/Capstones/1/wsba.py in calc_bootstrap(num_hourly_submissions, num_samples)
-    351         for hour, hour_sample_space in enumerate(num_hourly_submissions):
-    352             for s in range(0,num_samples):
---> 353                 strap_space[hour,s] = sum(random.choices(hour_sample_space,k=len(hour_sample_space))) / len(hour_sample_space)
-    354 
-    355         #print(strap_space)
-NameError: name 'random' is not defined<Figure size 432x432 with 1 Axes>
+<Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
 
 Here are the same data aggregated across hours plotted with 95% bootstrapped confidence bands (60k resamples each hour). Note the intra-day pattern, with the lowest frequency of posts occurring between midnight and 9AM UTC.<br>
 ![Figure 3](figures/avg_posts_per_hour.png)

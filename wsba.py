@@ -7,7 +7,9 @@ import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+from datetime import timedelta
+import random
+import numpy as np
 #%matplotlib inline
 
 # defining some gloabl variables
@@ -422,7 +424,7 @@ def posts_per_hour(save=[None,None]):
     most_hourly_observations = 0 
     
     for i,hour in enumerate(submissions_each_hour):
-        print(f'{i}:{len(hour)} {hour}')
+        #print(f'{i}:{len(hour)} {hour}')
         if len(hour) > most_hourly_observations:
             most_hourly_observations = len(hour)
     
@@ -454,7 +456,7 @@ def posts_per_hour(save=[None,None]):
     plt.gca().set_ylim(bottom=0)
     plt.tight_layout()
     if save[1]:
-        plt.savefig(save[1])        
+        plt.savefig(save[1])   
         
         
 if __name__ != '__main__':
