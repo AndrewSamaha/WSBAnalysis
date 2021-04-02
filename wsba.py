@@ -192,5 +192,53 @@ def getsubmissiondeltas(max=None,log=True,save=None):
         plt.savefig(save)
     pass
 
+def groupby_hour(save=None):
+    first = None
+    last = None
+    
+    dates_sorted = wsbs.aggregate( [ 
+        {
+            '$project': {
+                'hour': {
+                    '$dateToString': {
+                        'date': { '$dateFromString': {'dateString': '$created_utc' } }
+                        ,"format": "%H"
+                    }
+                }
+            }
+        },
+        {
+            "$group": { 
+                '_id':"$hour" ,
+                'numsubmissions': { '$sum':1 }
+            }#z
+            
+        },
+        {
+            "$sort":  { '_id': 1 } # This worked when there was a groupby for only a single field
+            #"$sort":  { '_id': {'day':1, 'hour':1} }
+        }
+    ] )
+    i = 0
+    hours = []
+    submissions = []
+    for val in dates_sorted:
+        hours.append(int(val['_id']))
+        submissions.append(int(val['numsubmissions']))
+        i += 1
+        if i >= 10:
+            pass
+        
+    
+    fig, ax = plt.subplots(1,1, figsize=(6,6))
+    ax.plot(hours, submissions)
+    ax.set_ylabel(f'Number of Submissions (n={sum(submissions)})')
+    ax.set_xlabel('Hour (UTC)')
+    plt.gca().set_ylim(bottom=0)
+    plt.tight_layout()
+    if save:
+        plt.savefig(save)
+
+
 if __name__ != '__main__':
     setup()
