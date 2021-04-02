@@ -53,7 +53,7 @@ Below is a graph of the total number of posts for each hour. Note the extreme ou
 ![Figure 3](figures/groupby_month_day_hour.png)
 <Figure size 432x432 with 1 Axes>
 
-Here are the same data aggregated across hours.<br>
+Here are the same data aggregated across hours. Note the intra-day pattern, with the lowest frequency of posts occurring between midnight and 9AM UTC.<br>
 ![Figure 3](figures/groupby_hour.png)
 <Figure size 432x432 with 1 Axes>
 
