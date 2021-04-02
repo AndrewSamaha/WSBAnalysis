@@ -44,7 +44,7 @@ print(num)
 1. Only one of the big authors is a bot (AutoModerator) as determined by visual inspection of their posts.
 
 # Posts Per Hour
-Below is a graph of the total number of posts for each hour. Note the extreme outlier. <br>
+Below is a graph of the total number of posts for each hour. Note the extreme outlier -- those took place during a four-hour period on March 24th, 2021 (shortly after 2000 hours on the graph below).<br>
 ![Figure 3](figures/groupby_month_day_hour.png)
 <% groupby_month_day_hour('figures/groupby_month_day_hour.png') %>
 
