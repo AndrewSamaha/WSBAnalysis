@@ -239,6 +239,70 @@ def groupby_hour(save=None):
     if save:
         plt.savefig(save)
 
+def groupby_month_day_hour(save=None):
+    def hour_of_year(month,day,hour):
+        '''given an hour, day, and month, return the number of hours since the beginning of the year'''
+        dayspermonth =[0,31,28,31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        return hour + day*24 + sum(dayspermonth[:month]) * 24
+    
+    first = None
+    last = None
+    
+    dates_sorted = wsbs.aggregate( [ 
+        {
+            '$project': {
+                'month': {
+                    '$dateToString': {
+                        'date': { '$dateFromString': {'dateString': '$created_utc' } }
+                        ,"format": "%m"
+                    }
+                },
+                'day': {
+                    '$dateToString': {
+                        'date': { '$dateFromString': {'dateString': '$created_utc' } }
+                        ,"format": "%d"
+                    }
+                },
+                'hour': {
+                    '$dateToString': {
+                        'date': { '$dateFromString': {'dateString': '$created_utc' } }
+                        ,"format": "%H"
+                    }
+                }
+            }
+        },
+        {
+            "$group": { 
+                '_id':{'month':'$month','day':'$day','hour':"$hour"} ,
+                'numsubmissions': { '$sum':1 }
+            }#z
+            
+        },
+        {
+            "$sort":  { '_id': 1 } # This worked when there was a groupby for only a single field
+            #"$sort":  { '_id': {'day':1, 'hour':1} }
+        }
+    ] )
+    i = 0
+    hours = []
+    submissions = []
+    for val in dates_sorted:
+        hours.append(hour_of_year(int(val['_id']['month']),int(val['_id']['day']),int(val['_id']['hour'])))
+        submissions.append(int(val['numsubmissions']))
+        #print(val)
+        i += 1
+        if i >= 10:
+            pass
+        #break
+    
+    fig, ax = plt.subplots(1,1, figsize=(6,6))
+    ax.plot(hours, submissions)
+    ax.set_ylabel(f'Number of Submissions (n={sum(submissions)})')
+    ax.set_xlabel('Hour Since the Beginning of the Year')
+    plt.gca().set_ylim(bottom=0)
+    plt.tight_layout()
+    if save:
+        plt.savefig(save)
 
 if __name__ != '__main__':
     setup()
