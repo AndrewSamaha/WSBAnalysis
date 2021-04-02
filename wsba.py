@@ -193,8 +193,9 @@ def getsubmissiondeltas(max=None,log=True,save=None):
     pass
 
 def groupby_hour(save=None):
-    first = None
-    last = None
+    '''
+    deprecated, replaced by posts_per_hour
+    '''
     
     dates_sorted = wsbs.aggregate( [ 
         {
@@ -240,6 +241,9 @@ def groupby_hour(save=None):
         plt.savefig(save)
 
 def groupby_month_day_hour(save=None):
+    '''
+    deprecated, replaced by posts_per_hour
+    '''
     def hour_of_year(month,day,hour):
         '''given an hour, day, and month, return the number of hours since the beginning of the year'''
         dayspermonth =[0,31,28,31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -286,7 +290,17 @@ def groupby_month_day_hour(save=None):
     i = 0
     hours = []
     submissions = []
+    
+    #build a list of lists
+    # submissions_each_hour[0] returns a list of submissions during midnight across all days
+    # submissions_each_hour[1] returns a list of submissions during 1am across all days
+    # and so on
+    submissions_each_hour = []
+    for hour in range(0,23):
+        submissions_each_hour.append([])
+        
     for val in dates_sorted:
+        submissions_each_hour[ int(val['_id']['hour']) ].append( int(val['numsubmissions']) )
         hours.append(hour_of_year(int(val['_id']['month']),int(val['_id']['day']),int(val['_id']['hour'])))
         submissions.append(int(val['numsubmissions']))
         #print(val)
@@ -304,5 +318,144 @@ def groupby_month_day_hour(save=None):
     if save:
         plt.savefig(save)
 
+def posts_per_hour(save=[None,None]):
+    def hour_of_year(month,day,hour):
+        '''given an hour, day, and month, return the number of hours since the beginning of the year'''
+        dayspermonth =[0,31,28,31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        return hour + day*24 + sum(dayspermonth[:month]) * 24
+    
+    def add_zeros(num_hourly_submissions, num):
+        '''
+        adds zeros to each hourly submission until the total number of data points equals num
+        '''
+        for i, hour in enumerate(num_hourly_submissions):
+            while len(num_hourly_submissions[i]) < num:
+                num_hourly_submissions[i].append(0)
+        return num_hourly_submissions
+    
+    def calc_avg_submissions_each_hour(num_hourly_submissions, num_days):
+        '''
+        given a list of submissions each hour, calculate the average number
+        of submissions for each hour and return that in a list.
+        
+        num_days - used as the denominator in the calculation of the average
+        '''
+        submissions_each_hour = []
+        for i, hour in enumerate(num_hourly_submissions):
+            submissions_each_hour.append( sum(hour) / num_days)
+        return submissions_each_hour
+    
+    def calc_bootstrap(num_hourly_submissions, num_samples=60_000):
+        strap_space = np.zeros((24,num_samples))
+        
+        for hour, hour_sample_space in enumerate(num_hourly_submissions):
+            for s in range(0,num_samples):
+                strap_space[hour,s] = sum(random.choices(hour_sample_space,k=len(hour_sample_space))) / len(hour_sample_space)
+        
+        #print(strap_space)
+        return strap_space
+    
+    dates_sorted = wsbs.aggregate( [ 
+        {
+            '$project': {
+                'month': {
+                    '$dateToString': {
+                        'date': { '$dateFromString': {'dateString': '$created_utc' } }
+                        ,"format": "%m"
+                    }
+                },
+                'day': {
+                    '$dateToString': {
+                        'date': { '$dateFromString': {'dateString': '$created_utc' } }
+                        ,"format": "%d"
+                    }
+                },
+                'hour': {
+                    '$dateToString': {
+                        'date': { '$dateFromString': {'dateString': '$created_utc' } }
+                        ,"format": "%H"
+                    }
+                }
+            }
+        },
+        {
+            "$group": { 
+                '_id':{'month':'$month','day':'$day','hour':"$hour"} ,
+                'numsubmissions': { '$sum':1 }
+            }#z
+            
+        },
+        {
+            "$sort":  { '_id': 1 } # This worked when there was a groupby for only a single field
+            #"$sort":  { '_id': {'day':1, 'hour':1} }
+        }
+    ] )
+    i = 0
+    hours = []
+    submissions = []
+    unique_days = []
+    
+    
+    
+    #submissions_each_hour is a list of lists
+    # submissions_each_hour[0] returns a list of submissions during midnight across all days
+    # submissions_each_hour[1] returns a list of submissions during 1am across all days
+    # and so on
+    submissions_each_hour = []
+    for hour in range(0,24):
+        submissions_each_hour.append([])
+        
+    for val in dates_sorted:
+        submissions_each_hour[ int(val['_id']['hour']) ].append( int(val['numsubmissions']) )
+        hours.append(hour_of_year(int(val['_id']['month']),int(val['_id']['day']),int(val['_id']['hour'])))
+        submissions.append(int(val['numsubmissions']))
+        unique_day = val['_id']['month'] + val['_id']['day']
+        if not unique_day in unique_days:
+            unique_days.append(unique_day)
+        #print(val)
+        i += 1
+        if i >= 10:
+            pass
+        #break
+    
+    # used to choose a denominator when calculating average submissions per hour
+    most_hourly_observations = 0 
+    
+    for i,hour in enumerate(submissions_each_hour):
+        print(f'{i}:{len(hour)} {hour}')
+        if len(hour) > most_hourly_observations:
+            most_hourly_observations = len(hour)
+    
+    submissions_each_hour = add_zeros(submissions_each_hour, most_hourly_observations)
+    
+    #for i,hour in enumerate(submissions_each_hour):
+    #    print(f'{i}:{len(hour)} {hour}')
+    
+    
+    
+    
+    fig, ax = plt.subplots(1,1, figsize=(6,6))
+    ax.plot(hours, submissions)
+    ax.set_ylabel(f'Number of Submissions (n={sum(submissions)})')
+    ax.set_xlabel('Hour (UTC)')
+    plt.gca().set_ylim(bottom=0)
+    plt.tight_layout()
+    if save[0]:
+        plt.savefig(save[0])
+    
+    bootstrap = calc_bootstrap(submissions_each_hour)
+    avg_submissions_each_hour = calc_avg_submissions_each_hour(submissions_each_hour, len(unique_days))
+    fig, ax = plt.subplots(1,1, figsize=(6,6))
+    ax.plot(range(0,24), avg_submissions_each_hour)
+    ax.plot(range(0,24), np.percentile(bootstrap, 2.5, axis=1), c='red')
+    ax.plot(range(0,24), np.percentile(bootstrap, 97.5, axis=1), c='red')
+    ax.set_ylabel(f'Avg Number of Submissions (n={sum(submissions)})')
+    ax.set_xlabel('Hour (UTC)')
+    plt.gca().set_ylim(bottom=0)
+    plt.tight_layout()
+    if save[1]:
+        plt.savefig(save[1])        
+        
+        
 if __name__ != '__main__':
     setup()
