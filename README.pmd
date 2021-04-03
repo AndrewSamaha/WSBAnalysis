@@ -23,7 +23,21 @@ As of <%print(datetime.date.today().strftime('%m/%d/%y'))%>, the dataset consist
 
 A Sample:
 ```
-{ "_id" : ObjectId("605bb15d5df7eedfb49c1b8d"), "id" : "mchdcf", "fullname" : "t3_mchdcf", "selftext" : "", "created_utc" : "2021-03-24 17:36:29", "num_comments" : 2, "score" : 7, "upvote_ratio" : 1, "is_original_content" : false, "permalink" : "/r/wallstreetbets/comments/mchdcf/im_an_abe_and_i_eat_crayons_keeping_those_gme/", "title" : "I’m an abe 🦍 and I eat crayons 🖍 Keeping those GME contracts because selling is a loss all in its own! 17K down and still holding strong!", "author" : "Powerful-Ad812", "firstseen" : "2021-03-24 21:38:37.008913" }
+{ 
+    "_id" : ObjectId("605bb15d5df7eedfb49c1b8d"), 
+    "id" : "mchdcf", 
+    "fullname" : "t3_mchdcf", 
+    "selftext" : "", 
+    "created_utc" : "2021-03-24 17:36:29", 
+    "num_comments" : 2, 
+    "score" : 7, 
+    "upvote_ratio" : 1, 
+    "is_original_content" : false, 
+    "permalink" : "/r/wallstreetbets/comments/mchdcf/im_an_abe_and_i_eat_crayons_keeping_those_gme/", 
+    "title" : "I’m an abe 🦍 and I eat crayons 🖍 Keeping those GME contracts because selling is a loss all in its own! 17K down and still holding strong!", 
+    "author" : "Powerful-Ad812", 
+    "firstseen" : "2021-03-24 21:38:37.008913" 
+}
 ```
 
 # The authors
