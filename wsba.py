@@ -601,6 +601,8 @@ def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=
         print(f'![Figure]({filename})')
         return    
 
+def count(query):
+    return wsbs.count_documents(query)
     
 if __name__ != '__main__':
     setup()

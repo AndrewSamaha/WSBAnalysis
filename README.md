@@ -51,8 +51,8 @@ A total of 1408 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 |
 | <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
 | <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
-| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
 | <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
+| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
 | <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
 | <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 |
 | <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
@@ -117,9 +117,9 @@ No obvious relationship exists between score and submission age, but this is a c
 ![Figure](figures/num_comments_by_scoreNone.png)
 <Figure size 432x432 with 1 Axes>
 
-These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions ---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)<ipython-input-1-09ac2f439ca2> in <module>
+These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions ---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)<ipython-input-1-09ac2f439ca2> in <module>
 ----> 1 count({'score': {'$lte':2000}})/count()
-NameError: name 'count' is not defined% and it looks like there might be a postive correlation between the two.
+TypeError: count() missing 1 required positional argument: 'query'% and it looks like there might be a postive correlation between the two.
 
 ![Figure](figures/num_comments_by_score2000.png)
 <Figure size 432x432 with 1 Axes>
