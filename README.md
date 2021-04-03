@@ -48,15 +48,15 @@ A total of 1408 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 10 |
 | <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 10 |
 | <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 10 |
+| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 |
 | <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
 | <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 |
 | <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
 | <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
+| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
 | <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
 | <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
 | <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 |
-| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
 
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word
@@ -91,17 +91,17 @@ There seem to be at least three measures related to the impact of each submissio
 1. Upvote Ratio - The proportion of upvotes to the total number of votes
 
 ![Figure](figures/score_by_age.png)
-<Figure size 432x432 with 1 Axes>
+<Figure size 432x432 with 1 Axes><br>
 ![Figure](figures/score_by_age_logx.png)
-<Figure size 432x432 with 1 Axes>
+<Figure size 432x432 with 1 Axes><br>
 ![Figure](figures/score_by_age_logy.png)
-<Figure size 432x432 with 1 Axes>
+<Figure size 432x432 with 1 Axes><br>
 ![Figure](figures/upvote_ratio_by_age.png)
-<Figure size 432x432 with 1 Axes>
+<Figure size 432x432 with 1 Axes><br>
 ![Figure](figures/num_comments_by_age.png)
-<Figure size 432x432 with 1 Axes>
+<Figure size 432x432 with 1 Axes><br>
 ![Figure](figures/num_comments_by_age_logy.png)
-<Figure size 432x432 with 1 Axes>
+<Figure size 432x432 with 1 Axes><br>
 
 
 # Next Steps
