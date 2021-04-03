@@ -93,10 +93,7 @@ There seem to be at least three measures related to the impact of each submissio
 ![Figure](figures/score_by_age.png)
 <Figure size 432x432 with 1 Axes>
 
-
-![Figure](figures/score_by_age_logx.png)
-<Figure size 432x432 with 1 Axes>
-
+No obvious relationship exists between score and submission age, but this is a convenient way to examine the distribution of scores. Given the right-tailed skew, let's examine the distribution on a log axis.
 
 ![Figure](figures/score_by_age_logy.png)
 <Figure size 432x432 with 1 Axes>

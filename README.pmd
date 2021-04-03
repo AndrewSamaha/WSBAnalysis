@@ -86,9 +86,7 @@ There seem to be at least three measures related to the impact of each submissio
 
 <% fig_field_by_age('score',save=True) %>
 
-
-<% fig_field_by_age('score',logx=True,save=True) %>
-
+No obvious relationship exists between score and submission age, but this is a convenient way to examine the distribution of scores. Given the right-tailed skew, let's examine the distribution on a log axis.
 
 <% fig_field_by_age('score',ymin=1,logy=True,save=True) %>
 
