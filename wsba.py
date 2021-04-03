@@ -459,7 +459,7 @@ def posts_per_hour(save=[None,None]):
         plt.savefig(save[1])   
         
 
-def fig_field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ymin=None):
+def fig_field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ymin=None,ymedian=False,ymean=False):
     '''
     returns the filename of a figure where some field is plotted 
     as a function of the age of the post in minutes
@@ -493,9 +493,20 @@ def fig_field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ym
 
     
     fig, ax = plt.subplots(1,1, figsize=(6,6))
-    ax.scatter(ages, data)
+    ax.scatter(ages, data, alpha=.5)
     ax.set_ylabel(field.capitalize())
     ax.set_xlabel('Submission Age (min)')
+    
+    if ymedian:
+        from statistics import median
+        ymedian = median(data)
+        ax.axhline(ymedian,c='red',linestyle='-.',label=f'median={round(ymedian,2)}')
+    
+    if ymean:
+        from statistics import mean
+        ymean = mean(data)
+        ax.axhline(ymean,c='red',linestyle='--',label=f'mean={round(ymean,2)}')
+        
     if ymin:
         plt.gca().set_ylim(bottom=ymin)
     if ymax:
@@ -512,7 +523,9 @@ def fig_field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ym
         logy = '_logy'
     else:
         logy = ''
-
+    if ymedian or ymean:
+        ax.legend()
+        
     plt.tight_layout()
     if save:
         filename = f'figures/{field}_by_age{logx}{logy}.png'

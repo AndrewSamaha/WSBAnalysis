@@ -111,7 +111,6 @@ No obvious relationship exists between score and submission age, but this is a c
 <Figure size 432x432 with 1 Axes>
 
 
-
 # Next Steps
 FIT THE DATA TO AN EXPONENTIAL DISTRIBUTION (or, geometric???)
 

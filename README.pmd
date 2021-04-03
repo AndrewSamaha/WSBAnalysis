@@ -88,17 +88,16 @@ There seem to be at least three measures related to the impact of each submissio
 
 No obvious relationship exists between score and submission age, but this is a convenient way to examine the distribution of scores. Given the right-tailed skew, let's examine the distribution on a log axis.
 
-<% fig_field_by_age('score',ymin=1,logy=True,save=True) %>
+<% fig_field_by_age('score',save=True,ymin=1,logy=True, ymedian=True, ymean=True) %>
 
 
-<% fig_field_by_age('upvote_ratio',save=True) %>
+<% fig_field_by_age('upvote_ratio',save=True,ymedian=True, ymean=True) %>
 
 
 <% fig_field_by_age('num_comments',save=True) %>
 
 
-<% fig_field_by_age('num_comments',ymin=1,logy=True,save=True) %>
-
+<% fig_field_by_age('num_comments',ymin=1,logy=True,save=True, ymedian=True, ymean=True) %>
 
 
 # Next Steps
