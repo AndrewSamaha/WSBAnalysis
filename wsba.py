@@ -459,7 +459,7 @@ def posts_per_hour(save=[None,None]):
         plt.savefig(save[1])   
         
 
-def field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ymin=None):
+def fig_field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ymin=None):
     '''
     returns the filename of a figure where some field is plotted 
     as a function of the age of the post in minutes
