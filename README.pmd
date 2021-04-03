@@ -105,7 +105,10 @@ No obvious relationship exists between score and submission age, but this is a c
 
 <% fig_field_by_field('num_comments','score',save=True) %>
 
+These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions <%= count({'score': {'$lte':2000}})/count() %>% and it looks like there might be a postive correlation between the two.
+
 <% fig_field_by_field('num_comments','score',xmax=2_000,xmin=0,save=True) %>
+
 
 ## Upvote Ratio vs. Num Comments
 
