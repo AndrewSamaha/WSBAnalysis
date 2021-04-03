@@ -90,7 +90,8 @@ There seem to be at least three measures related to the impact of each submissio
 1. Number of Comments - The most people are commenting on a post, the more exposure it's received and likely to receive in the future
 1. Upvote Ratio - The proportion of upvotes to the total number of votes
 
-![Figure 7]('figures/score_by_age.png'<Figure size 432x432 with 1 Axes>)
+![Figure 7](![Figure](figures/score_by_age.png)
+<Figure size 432x432 with 1 Axes>)
 
 
 

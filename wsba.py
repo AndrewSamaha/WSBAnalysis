@@ -517,7 +517,8 @@ def field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ymin=N
     if save:
         filename = f'figures/{field}_by_age{logx}{logy}.png'
         plt.savefig(filename)
-        return filename
+        print(f'![Figure]({filename})')
+        return
         
 if __name__ != '__main__':
     setup()
