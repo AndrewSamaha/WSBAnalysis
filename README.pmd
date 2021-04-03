@@ -120,17 +120,19 @@ And adding in the entire range of data, we can see the effect of the previously 
 
 ## Upvote Ratio vs. Num Comments
 
-<% fig_field_by_field('num_comments','upvote_ratio',save=True) %>
+<% fig_field_by_field('num_comments','upvote_ratio',mean=True,median=True,save=True) %>
 
-<% fig_field_by_field('num_comments','upvote_ratio',xmax=4_000,xmin=0,save=True) %>
+<% fig_field_by_field('num_comments','upvote_ratio',mean=True,median=True,xmax=4_000,xmin=0,save=True) %>
 
 <% fig_field_by_field('num_comments','upvote_ratio',logx=True,xmin=1,median=True,mean=True,save=True) %>
 
 ## Upvote Ratio vs. Score
 
-<% fig_field_by_field('score','upvote_ratio',save=True) %>
+<% fig_field_by_field('score','upvote_ratio',mean=True,median=True,save=True) %>
 
 <% fig_field_by_field('score','upvote_ratio',xmax=4_000,xmin=0,save=True) %>
+
+<% fig_field_by_field('score','upvote_ratio',xmin=1,logx=True,mean=True,median=True,save=True) %>
 
 # Next Steps
 FIT THE DATA TO AN EXPONENTIAL DISTRIBUTION (or, geometric???)
