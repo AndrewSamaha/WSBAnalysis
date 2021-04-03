@@ -12,7 +12,7 @@ Hence, the structure of this online community is worthy of investigation because
 
 # The Data
 
-As of 04/03/21, the dataset consisted of 1856 submissions to r/WallStreetBets from 03/18/21 to 04/03/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 04/03/21, the dataset consisted of 1857 submissions to r/WallStreetBets from 03/18/21 to 04/03/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -45,17 +45,17 @@ A total of 1408 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 49 |
 | <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 |
 | <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 12 |
+| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 10 |
 | <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 10 |
 | <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 10 |
-| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 10 |
 | <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
 | <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
 | <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 |
 | <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
 | <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
 | <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
 | <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 |
+| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
 | <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
 
 # Some Initial Observations
@@ -83,6 +83,16 @@ Removing deltas above 5000 gives us a smooth distribution that we can plot in ar
 Also, it's worth examining the left-side of the distribution more closely to make sure the geometric shape still holds true at shorter deltas.<br>
 ![Figure 6](figures/submissiondeltas_left.png)
 <Figure size 432x432 with 1 Axes>
+
+# Submission Impact
+There seem to be at least three measures related to the impact of each submission:
+1. Score - This is similar to likes or upvotes on other social media platforms
+1. Number of Comments - The most people are commenting on a post, the more exposure it's received and likely to receive in the future
+1. Upvote Ratio - The proportion of upvotes to the total number of votes
+
+![Figure 7]('figures/score_by_age.png'<Figure size 432x432 with 1 Axes>)
+
+
 
 # Next Steps
 FIT THE DATA TO AN EXPONENTIAL DISTRIBUTION (or, geometric???)

@@ -458,6 +458,66 @@ def posts_per_hour(save=[None,None]):
     if save[1]:
         plt.savefig(save[1])   
         
+
+def field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ymin=None):
+    '''
+    returns the filename of a figure where some field is plotted 
+    as a function of the age of the post in minutes
+    '''
+    age = wsbs.aggregate( [ 
+        {
+            '$project': {
+                'minutes_old': {
+                    '$divide': [
+                        {
+                            '$subtract': [
+                                { '$dateFromString': {'dateString': '$lastseen' } },
+                                { '$dateFromString': {'dateString': '$created_utc' } }
+                            ]
+                        }, 60_000 # per hour: 3_600_000
+                        
+                    ]
+                },
+                f'{field}': 1
+            }
+        }
+    ] )
+    
+    i = 0
+    data = []
+    ages = []
+    for item in age:
+        i += 1
+        data.append(item[field])
+        ages.append(item['minutes_old'])
+
+    
+    fig, ax = plt.subplots(1,1, figsize=(6,6))
+    ax.scatter(ages, data)
+    ax.set_ylabel(field.capitalize())
+    ax.set_xlabel('Submission Age (min)')
+    if ymin:
+        plt.gca().set_ylim(bottom=ymin)
+    if ymax:
+        plt.gca().set_ylim(top=ymax)
+    
+    if logx:
+        plt.xscale('log')
+        logx = '_logx'
+    else:
+        logx = ''
+
+    if logy:
+        plt.yscale('log')
+        logy = '_logy'
+    else:
+        logy = ''
+
+    plt.tight_layout()
+    if save:
+        filename = f'figures/{field}_by_age{logx}{logy}.png'
+        plt.savefig(filename)
+        return filename
         
 if __name__ != '__main__':
     setup()
