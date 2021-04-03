@@ -526,10 +526,10 @@ def fig_field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ym
     if ymedian or ymean:
         ax.legend()
         
-    plt.tight_layout()
+    _=plt.tight_layout()
     if save:
         filename = f'figures/{field}_by_age{logx}{logy}.png'
-        plt.savefig(filename)
+        _=plt.savefig(filename)
         print(f'![Figure]({filename})')
         return
         
