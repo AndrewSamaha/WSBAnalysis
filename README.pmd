@@ -85,7 +85,11 @@ There seem to be at least three measures related to the impact of each submissio
 1. Upvote Ratio - The proportion of upvotes to the total number of votes
 
 <% fig_field_by_age('score',save=True) %>
-
+<% fig_field_by_age('score',logx=True) %>
+<% fig_field_by_age('score',ymin=1,logy=True) %>
+<% fig_field_by_age('upvote_ratio') %>
+<% fig_field_by_age('num_comments') %>
+<% fig_field_by_age('num_comments',ymin=1,logy=True) %>
 
 
 # Next Steps
