@@ -46,17 +46,17 @@ A total of 1408 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 |
 | <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 12 |
 | <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 10 |
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 10 |
 | <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 10 |
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
+| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 10 |
 | <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 |
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
+| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
+| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
 | <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
-| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 |
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
+| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
 | <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
+| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 |
+| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
+| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
 
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word
@@ -139,6 +139,9 @@ And adding in the entire range of data, we can see the effect of the previously 
 <Figure size 432x432 with 1 Axes>
 
 ![Figure](figures/num_comments_by_upvote_ratio4000.png)
+<Figure size 432x432 with 1 Axes>
+
+![Figure](figures/num_comments_by_upvote_ratio_logxNone.png)
 <Figure size 432x432 with 1 Axes>
 
 ## Upvote Ratio vs. Score

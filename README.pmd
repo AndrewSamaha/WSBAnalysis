@@ -124,6 +124,8 @@ And adding in the entire range of data, we can see the effect of the previously 
 
 <% fig_field_by_field('num_comments','upvote_ratio',xmax=4_000,xmin=0,save=True) %>
 
+<% fig_field_by_field('num_comments','upvote_ratio',logx=True,xmin=1,median=True,mean=True,save=True) %>
+
 ## Upvote Ratio vs. Score
 
 <% fig_field_by_field('score','upvote_ratio',save=True) %>
