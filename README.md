@@ -91,17 +91,23 @@ There seem to be at least three measures related to the impact of each submissio
 1. Upvote Ratio - The proportion of upvotes to the total number of votes
 
 ![Figure](figures/score_by_age.png)
-<Figure size 432x432 with 1 Axes><br>
+<Figure size 432x432 with 1 Axes>
+These data<br>
 ![Figure](figures/score_by_age_logx.png)
-<Figure size 432x432 with 1 Axes><br>
+<Figure size 432x432 with 1 Axes>
+Say something<br>
 ![Figure](figures/score_by_age_logy.png)
-<Figure size 432x432 with 1 Axes><br>
+<Figure size 432x432 with 1 Axes>
+Analysis<br>
 ![Figure](figures/upvote_ratio_by_age.png)
-<Figure size 432x432 with 1 Axes><br>
+<Figure size 432x432 with 1 Axes>
+are<br>
 ![Figure](figures/num_comments_by_age.png)
-<Figure size 432x432 with 1 Axes><br>
+<Figure size 432x432 with 1 Axes>
+cool<br>
 ![Figure](figures/num_comments_by_age_logy.png)
-<Figure size 432x432 with 1 Axes><br>
+<Figure size 432x432 with 1 Axes>
+and exciting<br>
 
 
 # Next Steps
