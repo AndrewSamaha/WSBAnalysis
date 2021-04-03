@@ -78,7 +78,7 @@ Also, it's worth examining the left-side of the distribution more closely to mak
 ![Figure 6](figures/submissiondeltas_left.png)
 <% getsubmissiondeltas(max=200,log=False,save='figures/submissiondeltas_left.png') %>
 
-# Submission Impact
+# Submission Impact EDA
 There seem to be at least three measures related to the impact of each submission:
 1. Score - This is similar to likes or upvotes on other social media platforms
 1. Number of Comments - The most people are commenting on a post, the more exposure it's received and likely to receive in the future
@@ -98,6 +98,13 @@ No obvious relationship exists between score and submission age, but this is a c
 
 
 <% fig_field_by_age('num_comments',ymin=1,logy=True,save=True, ymedian=True, ymean=True) %>
+
+# Impact Relationships
+
+<% fig_field_by_field('num_comments','score',save=True) %>
+
+
+<% fig_field_by_field('num_comments','score',xmax=2_000,xmin=0,save=True) %>
 
 
 # Next Steps

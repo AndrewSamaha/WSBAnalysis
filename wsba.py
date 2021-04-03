@@ -532,6 +532,75 @@ def fig_field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ym
         _=plt.savefig(filename)
         print(f'![Figure]({filename})')
         return
+
+def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=False,ymax=None,ymin=None,ymedian=False,ymean=False,xmax=None,xmin=None):
+    '''
+    returns the filename of a figure where some field is plotted 
+    as a function of the age of the post in minutes
+    '''
+    age = wsbs.aggregate( [ 
+        {
+            '$project': {
+                f'{fielda}': 1,
+                f'{fieldb}': 1
+            }
+        }
+    ] )
+    
+    i = 0
+    fielda_data = []
+    fieldb_data = []
+    for item in age:
+        i += 1
+        fielda_data.append(item[fielda])
+        fieldb_data.append(item[fieldb])
+
+    
+    fig, ax = plt.subplots(1,1, figsize=(6,6))
+    ax.scatter(fielda_data, fieldb_data, alpha=.5)
+    ax.set_xlabel(fielda.capitalize())
+    ax.set_ylabel(fieldb.capitalize())
+    
+    if ymedian:
+        from statistics import median
+        ymedian = median(data)
+        ax.axhline(ymedian,c='red',linestyle='-.',label=f'median={round(ymedian,2)}')
+    
+    if ymean:
+        from statistics import mean
+        ymean = mean(data)
+        ax.axhline(ymean,c='red',linestyle='--',label=f'mean={round(ymean,2)}')
         
+    if ymin!=None:
+        plt.gca().set_ylim(bottom=ymin)
+    if ymax:
+        plt.gca().set_ylim(top=ymax)
+    if xmax:
+        plt.gca().set_xlim(right=xmax)
+    if xmin!=None:
+        plt.gca().set_xlim(left=xmin)
+        
+    if logx:
+        plt.xscale('log')
+        logx = '_logx'
+    else:
+        logx = ''
+
+    if logy:
+        plt.yscale('log')
+        logy = '_logy'
+    else:
+        logy = ''
+    if ymedian or ymean:
+        ax.legend()
+        
+    _=plt.tight_layout()
+    if save:
+        filename = f'figures/{fielda}_by_{fieldb}{logx}{logy}.png'
+        _=plt.savefig(filename)
+        print(f'![Figure]({filename})')
+        return    
+
+    
 if __name__ != '__main__':
     setup()
