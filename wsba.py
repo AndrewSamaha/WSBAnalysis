@@ -533,7 +533,7 @@ def fig_field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ym
         print(f'![Figure]({filename})')
         return
 
-def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=False,ymax=None,ymin=None,ymedian=False,ymean=False,xmax=None,xmin=None):
+def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=False,ymax=None,ymin=None,median=False,mean=False,xmax=None,xmin=None):
     '''
     returns the filename of a figure where some field is plotted 
     as a function of the age of the post in minutes
@@ -561,15 +561,19 @@ def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=
     ax.set_xlabel(fielda.capitalize())
     ax.set_ylabel(fieldb.capitalize())
     
-    if ymedian:
+    if median:
+        median='median'
         from statistics import median
-        ymedian = median(data)
-        ax.axhline(ymedian,c='red',linestyle='-.',label=f'median={round(ymedian,2)}')
+        xmedian = median(fielda_data)
+        ymedian = median(fieldb_data)
+        ax.scatter([xmedian],[ymedian],c='red',marker='o',s=100,label=f'median={round(xmedian,2)},{round(ymedian,2)}',alpha=.5)
     
-    if ymean:
+    if mean:
+        mean='mean'
         from statistics import mean
-        ymean = mean(data)
-        ax.axhline(ymean,c='red',linestyle='--',label=f'mean={round(ymean,2)}')
+        xmean = mean(fielda_data)
+        ymean = mean(fieldb_data)
+        ax.scatter([xmean],[ymean],c='red',marker='x',s=100,label=f'mean={round(xmean,2)},{round(ymean,2)}',alpha=.5)
         
     if ymin!=None:
         plt.gca().set_ylim(bottom=ymin)
@@ -591,7 +595,7 @@ def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=
         logy = '_logy'
     else:
         logy = ''
-    if ymedian or ymean:
+    if median or mean:
         ax.legend()
         
     _=plt.tight_layout()
@@ -599,7 +603,7 @@ def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=
         filename = f'figures/{fielda}_by_{fieldb}{logx}{logy}{xmax}.png'
         _=plt.savefig(filename)
         print(f'![Figure]({filename})')
-        return    
+        return
 
 def count(query):
     return wsbs.count_documents(query)
