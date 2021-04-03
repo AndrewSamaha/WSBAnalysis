@@ -596,7 +596,7 @@ def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=
         
     _=plt.tight_layout()
     if save:
-        filename = f'figures/{fielda}_by_{fieldb}{logx}{logy}.png'
+        filename = f'figures/{fielda}_by_{fieldb}{logx}{logy}{xmax}.png'
         _=plt.savefig(filename)
         print(f'![Figure]({filename})')
         return    
