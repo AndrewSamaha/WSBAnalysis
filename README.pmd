@@ -101,11 +101,23 @@ No obvious relationship exists between score and submission age, but this is a c
 
 # Impact Relationships
 
-<% fig_field_by_field('num_comments','score',save=True) %>
+## Score vs Num Comments
 
+<% fig_field_by_field('num_comments','score',save=True) %>
 
 <% fig_field_by_field('num_comments','score',xmax=2_000,xmin=0,save=True) %>
 
+## Upvote Ratio vs. Num Comments
+
+<% fig_field_by_field('num_comments','upvote_ratio',save=True) %>
+
+<% fig_field_by_field('num_comments','upvote_ratio',xmax=4_000,xmin=0,save=True) %>
+
+## Upvote Ratio vs. Score
+
+<% fig_field_by_field('score','upvote_ratio',save=True) %>
+
+<% fig_field_by_field('score','upvote_ratio',xmax=4_000,xmin=0,save=True) %>
 
 # Next Steps
 FIT THE DATA TO AN EXPONENTIAL DISTRIBUTION (or, geometric???)
