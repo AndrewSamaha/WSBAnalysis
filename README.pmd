@@ -103,15 +103,15 @@ No obvious relationship exists between score and submission age, but this is a c
 
 ## Score vs Num Comments
 
-<% fig_field_by_field('num_comments','score',save=True) %>
+<% fig_field_by_field('num_comments','score',save=True,mean=True,median=True) %>
 
 These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (<%= round(count({'score': {'$lte':2000}})*100/count({})) %>%) and it looks like there might be a postive correlation between the two.
 
-<% fig_field_by_field('num_comments','score',xmax=2_000,xmin=0,save=True) %>
+<% fig_field_by_field('num_comments','score',xmax=2_000,xmin=0,save=True,mean=True,median=True) %>
 
 Excluding scores greater than 2000, we can see a clear positive relationship between score and the number of comments. This relationship can be see even more clearly when the data are plotted in log-log coordinates:
 
-<% fig_field_by_field('num_comments','score',xmax=2_000,xmin=1,ymin=1,logx=True,logy=True,save=True) %>
+<% fig_field_by_field('num_comments','score',xmax=2_000,xmin=1,ymin=1,logx=True,logy=True,save=True,mean=True,median=True) %>
 
 And adding in the entire range of data, we can see the effect of the previously excluded data is negligable on that relationhip:
 
