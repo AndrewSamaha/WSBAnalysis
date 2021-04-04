@@ -86,7 +86,7 @@ There seem to be at least three measures related to the impact of each submissio
 
 <% fig_field_by_age('score',save=True) %>
 
-No obvious relationship exists between score and submission age. This finding is important because it means that a submission's impact does not need to be scaled according to its age. Also, this is a convenient way to examine the distribution of scores. Given the right-tailed skew, let's examine the distribution on a log axis.
+One might assume that older submissions tend to have more upvotes and hence, a higher score. However, no obvious relationship exists between score and submission age. Still, we can use this figure to examine the distribution of scores. Given the right-tailed skew, let's examine the distribution on a log axis.
 
 <% fig_field_by_age('score',save=True,ymin=1,logy=True, ymedian=True, ymean=True) %>
 
