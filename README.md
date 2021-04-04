@@ -12,7 +12,7 @@ Hence, the structure of this online community is worthy of investigation because
 
 # The Data
 
-As of 04/03/21, the dataset consisted of 1857 submissions to r/WallStreetBets from 03/18/21 to 04/03/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 04/04/21, the dataset consisted of 1857 submissions to r/WallStreetBets from 03/18/21 to 04/03/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -178,4 +178,4 @@ What's the average exposure, average upvote ratio for all posters versus the mos
 1. Matplotlib (visualization)
 1. PWeave (CI/CD: this readme)
 
-_This file was compiled on 2021-04-03._
+_This file was compiled on 2021-04-04._

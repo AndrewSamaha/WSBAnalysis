@@ -134,23 +134,23 @@ def makeauthorfigures():
     ax.set_ylabel(f'Number of Posts (n={sum(post_counts)})')
     ax.set_ylim(ymin=0)
     ax.set_xlim(xmin=0,xmax=2)
-    plt.tight_layout()
-    plt.savefig('figures/pda_numposts.png')
+    _ = plt.tight_layout()
+    _ = plt.savefig('figures/pda_numposts.png')
     fig, ax = plt.subplots(1,1, figsize=(6,6))
     ax.hist(x=post_counts)
     ax.set_ylabel(f'Number of Posters (n={num_unique_posters})')
     ax.set_xlabel('Number of Posts')
-    plt.tight_layout()
+    _ = plt.tight_layout()
     plt.yscale('log')
-    plt.savefig('figures/pda_numposts_hist.png')
+    _ = plt.savefig('figures/pda_numposts_hist.png')
     
     num, authors, counts = groupbyauthor(show=False, min=6)
     fig, ax = plt.subplots(1,1, figsize=(6,6))
     ax.barh(y=authors, width=counts)
     ax.set_ylabel('Most Productive Posters')
     ax.set_xlabel('Number of Posts')
-    plt.tight_layout()
-    plt.savefig('figures/pda_biggestposters.png')
+    _ = plt.tight_layout()
+    _ = plt.savefig('figures/pda_biggestposters.png')
     
 def makebiggestauthortable():
     num, authors, counts = groupbyauthor(show=False, min=6)
@@ -187,11 +187,11 @@ def getsubmissiondeltas(max=None,log=True,save=None):
     ax.hist(x=deltas)
     ax.set_ylabel(f'Number of Deltas (n={len(deltas)})')
     ax.set_xlabel('Deltas (Seconds Between Submissions)')
-    plt.tight_layout()
+    _ = plt.tight_layout()
     if log:
-        plt.yscale('log')
+        _ = plt.yscale('log')
     if save:
-        plt.savefig(save)
+        _ = plt.savefig(save)
     pass
 
 def groupby_hour(save=None):
@@ -237,10 +237,10 @@ def groupby_hour(save=None):
     ax.plot(hours, submissions)
     ax.set_ylabel(f'Number of Submissions (n={sum(submissions)})')
     ax.set_xlabel('Hour (UTC)')
-    plt.gca().set_ylim(bottom=0)
-    plt.tight_layout()
+    _ = plt.gca().set_ylim(bottom=0)
+    _ = plt.tight_layout()
     if save:
-        plt.savefig(save)
+        _ = plt.savefig(save)
 
 def groupby_month_day_hour(save=None):
     '''
@@ -315,10 +315,10 @@ def groupby_month_day_hour(save=None):
     ax.plot(hours, submissions)
     ax.set_ylabel(f'Number of Submissions (n={sum(submissions)})')
     ax.set_xlabel('Hour Since the Beginning of the Year')
-    plt.gca().set_ylim(bottom=0)
-    plt.tight_layout()
+    _ = plt.gca().set_ylim(bottom=0)
+    _ = plt.tight_layout()
     if save:
-        plt.savefig(save)
+        _ = plt.savefig(save)
 
 def posts_per_hour(save=[None,None]):
     def hour_of_year(month,day,hour):
@@ -440,10 +440,10 @@ def posts_per_hour(save=[None,None]):
     ax.plot(hours, submissions)
     ax.set_ylabel(f'Number of Submissions (n={sum(submissions)})')
     ax.set_xlabel('Hour (UTC)')
-    plt.gca().set_ylim(bottom=0)
-    plt.tight_layout()
+    _ = plt.gca().set_ylim(bottom=0)
+    _ = plt.tight_layout()
     if save[0]:
-        plt.savefig(save[0])
+        _ = plt.savefig(save[0])
     
     bootstrap = calc_bootstrap(submissions_each_hour)
     avg_submissions_each_hour = calc_avg_submissions_each_hour(submissions_each_hour, len(unique_days))
@@ -453,10 +453,10 @@ def posts_per_hour(save=[None,None]):
     ax.plot(range(0,24), np.percentile(bootstrap, 97.5, axis=1), c='red')
     ax.set_ylabel(f'Avg Number of Submissions (n={sum(submissions)})')
     ax.set_xlabel('Hour (UTC)')
-    plt.gca().set_ylim(bottom=0)
-    plt.tight_layout()
+    _ = plt.gca().set_ylim(bottom=0)
+    _ = plt.tight_layout()
     if save[1]:
-        plt.savefig(save[1])   
+        _ = plt.savefig(save[1])   
         
 
 def fig_field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ymin=None,ymedian=False,ymean=False):
