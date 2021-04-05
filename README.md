@@ -51,8 +51,8 @@ A total of 1485 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
 | <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
 | <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 |
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
 | <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
+| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
 | <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 |
 | <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
 | <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
