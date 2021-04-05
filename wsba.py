@@ -533,7 +533,7 @@ def fig_field_by_age(field='score',logx=False,logy=False,save=False,ymax=None,ym
         print(f'![Figure]({filename})')
         return
 
-def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=False,ymax=None,ymin=None,median=False,mean=False,xmax=None,xmin=None):
+def fig_field_by_field(fielda='score',fieldb='score',fielda_max=None,logx=False,logy=False,save=False,ymax=None,ymin=None,median=False,mean=False,xmax=None,xmin=None,spearman=None,pearson=None,regression=None):
     '''
     returns the filename of a figure where some field is plotted 
     as a function of the age of the post in minutes
@@ -551,13 +551,37 @@ def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=
     fielda_data = []
     fieldb_data = []
     for item in age:
+        if fielda_max and item[fielda] > fielda_max:
+            continue
         i += 1
         fielda_data.append(item[fielda])
         fieldb_data.append(item[fieldb])
 
+    if spearman:
+        spearman_rho, spearman_p = stats.spearmanr(a=fielda_data, b=fieldb_data)
+        print(f'spearman_rho={spearman_rho}   spearman_p={spearman_p}')
+    
+    if pearson:
+        pearson_r, pearson_p = stats.pearsonr(x=fielda_data, y=fieldb_data)
+        print(f'pearson_r={pearson_r}   pearson_p={pearson_p}')
+    
+    lr_m=0
+    lr_b=0
+    lr_r=0
+    lr_p=0
+    lr_stredd = 0
+    if regression:
+        lr_m, lr_b, lr_r, lr_p, lr_stredd = stats.linregress(fielda_data, fieldb_data)
+        def lr(x):
+            return lr_m * x + lr_b
+        print("regression; pearson r: ", lr_r, lr_p, lr_stredd)
     
     fig, ax = plt.subplots(1,1, figsize=(6,6))
     ax.scatter(fielda_data, fieldb_data, alpha=.5)
+    if regression:
+        ax.plot([min(fielda_data),max(fielda_data)], [lr_m * min(fielda_data) + lr_b,lr_m * max(fielda_data) + lr_b],label=f'y={round(lr_m,2)}x+{round(lr_b)}, r={round(lr_r,2)} p={round(lr_p,4)}',c='red',linestyle='--')
+        print([min(fielda_data),max(fielda_data)])
+        print([lr_m * min(fielda_data) + lr_b,lr_m * max(fielda_data) + lr_b])
     ax.set_xlabel(fielda.capitalize())
     ax.set_ylabel(fieldb.capitalize())
     
@@ -566,14 +590,14 @@ def fig_field_by_field(fielda='score',fieldb='score',logx=False,logy=False,save=
         from statistics import median
         xmedian = median(fielda_data)
         ymedian = median(fieldb_data)
-        ax.scatter([xmedian],[ymedian],c='red',marker='o',s=100,label=f'median={round(xmedian,2)},{round(ymedian,2)}',alpha=.5)
+        ax.scatter([xmedian],[ymedian],c='red',marker='o',s=100,label=f'median={round(xmedian,2)}, {round(ymedian,2)}',alpha=.5)
     
     if mean:
         mean='mean'
         from statistics import mean
         xmean = mean(fielda_data)
         ymean = mean(fieldb_data)
-        ax.scatter([xmean],[ymean],c='red',marker='x',s=100,label=f'mean={round(xmean,2)},{round(ymean,2)}',alpha=.5)
+        ax.scatter([xmean],[ymean],c='red',marker='x',s=100,label=f'mean={round(xmean,2)}, {round(ymean,2)}',alpha=.5)
         
     if ymin!=None:
         plt.gca().set_ylim(bottom=ymin)

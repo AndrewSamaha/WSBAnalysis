@@ -119,16 +119,31 @@ One might assume that older submissions tend to have more upvotes and hence, a h
 
 These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (83%) and it looks like there might be a postive correlation between the two.
 
-![Figure](figures/num_comments_by_score2000.png)
+regression; pearson r:  0.6789328090847496 7.114265951196409e-261 0.3333244146926099
+[0, 8340]
+[51.769238697059336, 112897.77905108444]
+![Figure](figures/num_comments_by_scoreNone.png)
+<Figure size 432x432 with 1 Axes>
+
+regression; pearson r:  0.7135659914644709 3.5545688742525146e-297 0.46571265092210234
+[0, 1896]
+[-928.4388458996114, 38355.67758863208]
+![Figure](figures/num_comments_by_scoreNone.png)
 <Figure size 432x432 with 1 Axes>
 
 Excluding scores greater than 2000, we can see a clear positive relationship between score and the number of comments. This relationship can be see even more clearly when the data are plotted in log-log coordinates:
 
-![Figure](figures/num_comments_by_score_logx_logy2000.png)
+regression; pearson r:  0.7135659914644709 3.5545688742525146e-297 0.46571265092210234
+[0, 1896]
+[-928.4388458996114, 38355.67758863208]
+![Figure](figures/num_comments_by_score_logx_logyNone.png)
 <Figure size 432x432 with 1 Axes>
 
 And adding in the entire range of data, we can see the effect of the previously excluded data is negligable on that relationhip:
 
+regression; pearson r:  0.24174684929350584 1.4904527973836595e-27 0.04918163036246603
+[0, 69534]
+[2243.2197529718733, 40010.750328794165]
 ![Figure](figures/num_comments_by_score_logx_logyNone.png)
 <Figure size 432x432 with 1 Axes>
 

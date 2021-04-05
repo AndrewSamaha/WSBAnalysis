@@ -103,19 +103,21 @@ One might assume that older submissions tend to have more upvotes and hence, a h
 
 ## Score vs Num Comments
 
-<% fig_field_by_field('num_comments','score',save=True,mean=True,median=True) %>
+<% fig_field_by_field('num_comments','score',save=True) %>
 
 These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (<%= round(count({'score': {'$lte':2000}})*100/count({})) %>%) and it looks like there might be a postive correlation between the two.
 
-<% fig_field_by_field('num_comments','score',xmax=2_000,xmin=0,save=True,mean=True,median=True) %>
+<% fig_field_by_field('num_comments','score',fielda_max=10_000,xmin=0,save=True,mean=True,median=True,regression=True) %>
+
+<% fig_field_by_field('num_comments','score',fielda_max=2_000,xmin=0,save=True,mean=True,median=True,regression=True) %>
 
 Excluding scores greater than 2000, we can see a clear positive relationship between score and the number of comments. This relationship can be see even more clearly when the data are plotted in log-log coordinates:
 
-<% fig_field_by_field('num_comments','score',xmax=2_000,xmin=1,ymin=1,logx=True,logy=True,save=True,mean=True,median=True) %>
+<% fig_field_by_field('num_comments','score',fielda_max=2_000,xmin=1,ymin=1,logx=True,logy=True,save=True,mean=True,median=True, regression=True) %>
 
 And adding in the entire range of data, we can see the effect of the previously excluded data is negligable on that relationhip:
 
-<% fig_field_by_field('num_comments','score',logx=True,logy=True,xmin=1,ymin=1,mean=True,median=True,save=True) %>
+<% fig_field_by_field('num_comments','score',logx=True,logy=True,xmin=1,ymin=1,mean=True,median=True,save=True,regression=True) %>
 
 
 ## Upvote Ratio vs. Num Comments
