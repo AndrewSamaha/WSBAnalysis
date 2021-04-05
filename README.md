@@ -45,18 +45,18 @@ A total of 1485 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 54 |
 | <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 |
 | <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 13 |
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 11 |
 | <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 11 |
+| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 11 |
 | <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 10 |
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 |
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
 | <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
-| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
+| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
+| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 |
 | <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
-| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
+| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
 | <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 |
+| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
 | <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
+| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
 
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word
@@ -119,23 +119,19 @@ One might assume that older submissions tend to have more upvotes and hence, a h
 
 These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (83%) and it looks like there might be a postive correlation between the two.
 
-regression; pearson r:  0.6789328090847496 7.114265951196409e-261 0.3333244146926099
 ![Figure](figures/num_comments_by_scoreNone.png)
 <Figure size 432x432 with 1 Axes>
 
-regression; pearson r:  0.7135659914644709 3.5545688742525146e-297 0.46571265092210234
 ![Figure](figures/num_comments_by_scoreNone.png)
 <Figure size 432x432 with 1 Axes>
 
 Excluding scores greater than 2000, we can see a clear positive relationship between score and the number of comments. This relationship can be see even more clearly when the data are plotted in log-log coordinates:
 
-regression; pearson r:  0.7135659914644709 3.5545688742525146e-297 0.46571265092210234
 ![Figure](figures/num_comments_by_score_logx_logyNone.png)
 <Figure size 432x432 with 1 Axes>
 
 And adding in the entire range of data, we can see the effect of the previously excluded data is negligable on that relationhip:
 
-regression; pearson r:  0.24174684929350584 1.4904527973836595e-27 0.04918163036246603
 ![Figure](figures/num_comments_by_score_logx_logyNone.png)
 <Figure size 432x432 with 1 Axes>
 

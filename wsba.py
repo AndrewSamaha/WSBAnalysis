@@ -574,7 +574,7 @@ def fig_field_by_field(fielda='score',fieldb='score',fielda_max=None,logx=False,
         lr_m, lr_b, lr_r, lr_p, lr_stredd = stats.linregress(fielda_data, fieldb_data)
         def lr(x):
             return lr_m * x + lr_b
-        print("regression; pearson r: ", lr_r, lr_p, lr_stredd)
+        #print("regression; pearson r: ", lr_r, lr_p, lr_stredd)
     
     fig, ax = plt.subplots(1,1, figsize=(6,6))
     ax.scatter(fielda_data, fieldb_data, alpha=.5)
