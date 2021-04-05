@@ -559,11 +559,11 @@ def fig_field_by_field(fielda='score',fieldb='score',fielda_max=None,logx=False,
 
     if spearman:
         spearman_rho, spearman_p = stats.spearmanr(a=fielda_data, b=fieldb_data)
-        print(f'spearman_rho={spearman_rho}   spearman_p={spearman_p}')
+        #print(f'spearman_rho={spearman_rho}   spearman_p={spearman_p}')
     
     if pearson:
         pearson_r, pearson_p = stats.pearsonr(x=fielda_data, y=fieldb_data)
-        print(f'pearson_r={pearson_r}   pearson_p={pearson_p}')
+        #print(f'pearson_r={pearson_r}   pearson_p={pearson_p}')
     
     lr_m=0
     lr_b=0
@@ -580,8 +580,8 @@ def fig_field_by_field(fielda='score',fieldb='score',fielda_max=None,logx=False,
     ax.scatter(fielda_data, fieldb_data, alpha=.5)
     if regression:
         ax.plot([min(fielda_data),max(fielda_data)], [lr_m * min(fielda_data) + lr_b,lr_m * max(fielda_data) + lr_b],label=f'y={round(lr_m,2)}x+{round(lr_b)}, r={round(lr_r,2)} p={round(lr_p,4)}',c='red',linestyle='--')
-        print([min(fielda_data),max(fielda_data)])
-        print([lr_m * min(fielda_data) + lr_b,lr_m * max(fielda_data) + lr_b])
+        #print([min(fielda_data),max(fielda_data)])
+        #print([lr_m * min(fielda_data) + lr_b,lr_m * max(fielda_data) + lr_b])
     ax.set_xlabel(fielda.capitalize())
     ax.set_ylabel(fieldb.capitalize())
     
