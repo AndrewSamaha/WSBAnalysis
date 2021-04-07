@@ -12,7 +12,7 @@ Hence, the structure of this online community is worthy of investigation because
 
 # The Data
 
-As of 04/05/21, the dataset consisted of 1967 submissions to r/WallStreetBets from 03/18/21 to 04/05/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 04/06/21, the dataset consisted of 1967 submissions to r/WallStreetBets from 03/18/21 to 04/05/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -34,29 +34,32 @@ A Sample:
 ```
 
 # The authors
-A total of 1485 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
+A total of ---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)<ipython-input-1-dba0c109cd80> in <module>
+----> 1 (num, b, c) = groupbyauthor()
+      2 print(num)
+NameError: name 'groupbyauthor' is not defined submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
 ![Figure 1](figures/pda_numposts.png)
 ![Figure 2](figures/pda_numposts_hist.png)
 ![Figure 3](figures/pda_biggestposters.png)
-<Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
+---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)<ipython-input-1-b7568e4c4ed2> in <module>
+----> 1 makeauthorfigures()
+~/RPP/Capstones/1/wsba.py in makeauthorfigures()
+    145 
+    146 def makeauthorfigures():
+--> 147     (num_unique_posters, posters, post_counts) = groupbyauthor()
+    148 
+    149     fig, ax = plt.subplots(1,1, figsize=(6,6))
+NameError: name 'groupbyauthor' is not defined
 
-| Poster | Post Count |
-|--------|------------|
-| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 54 |
-| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 |
-| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 13 |
-| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 11 |
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 11 |
-| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 10 |
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 |
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 |
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 |
-| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 |
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 |
-| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 |
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 |
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 |
-| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 |
+---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)<ipython-input-1-0c171e874a66> in <module>
+----> 1 makebiggestauthortable()
+~/RPP/Capstones/1/wsba.py in makebiggestauthortable()
+    178 
+    179 def makebiggestauthortable():
+--> 180     num, authors, counts, rates = groupbyauthor(show=False, min=6)
+    181     print('| Poster | Post Count | Posts/Day |')
+    182     print('|--------|------------|-----------|')
+NameError: name 'groupbyauthor' is not defined
 
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word
@@ -181,4 +184,4 @@ What's the average exposure, average upvote ratio for all posters versus the mos
 1. Matplotlib (visualization)
 1. PWeave (CI/CD: this readme)
 
-_This file was compiled on 2021-04-05._
+_This file was compiled on 2021-04-06._

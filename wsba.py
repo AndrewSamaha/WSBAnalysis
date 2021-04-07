@@ -98,26 +98,50 @@ def getdaterange():
     #print(first,last)
     return first,last
 
-def groupbyauthor(show=False, min=0):
+def get_authors(show=False, min=0, max=999_999):
     '''
     returns num_unique_posters, poster_names, poster_counts
     '''
     global wsbs
-    authors = wsbs.aggregate([{"$group":{"_id":"$author","count": { "$sum":1 }}},{"$sort":{'count':-1}}])
-    most = 10
+    authors = wsbs.aggregate([ 
+        { 
+            "$group": {
+                "_id": "$author",
+                "count": { "$sum": 1 }
+            } 
+        },
+        { 
+            "$project": {
+                "count": 1,
+                "rate": { "$divide": ["$count",get_days()] }
+            } 
+        },
+        {    
+            "$sort": {
+                'rate':-1  
+            }
+        }
+    ])
     i = 0
-    post_counts = []
-    posters = []
-    for x in authors:
-        if x['count'] > 1 and show:
-            print(x)
     
-        if x['count'] >= min:
+    posters = []
+    post_counts = []
+    post_rates = []
+    for x in authors:
+        #print(x, x['count'])
+        
+        if x['count'] > 1 and show:
+            pass
+    
+        if x['count'] >= min and x['count'] <= max:
+            if show:
+                print(x,round(x['count'],2),round(x['rate'],2))
             i += 1
             post_counts.append(x['count'])
             posters.append(x['_id'])
+            post_rates.append(x['rate'])
             
-    return (i, posters, post_counts)
+    return (i, posters, post_counts, post_rates)
 
 def makeauthorfigures():
     (num_unique_posters, posters, post_counts) = groupbyauthor()
@@ -153,11 +177,11 @@ def makeauthorfigures():
     _ = plt.savefig('figures/pda_biggestposters.png')
     
 def makebiggestauthortable():
-    num, authors, counts = groupbyauthor(show=False, min=6)
-    print('| Poster | Post Count |')
-    print('|--------|------------|')
-    for author,count in zip(authors,counts):
-        print(f'| <a href=https://www.reddit.com/user/{author}/>{author}</a> | {count} |')
+    num, authors, counts, rates = groupbyauthor(show=False, min=6)
+    print('| Poster | Post Count | Posts/Day |')
+    print('|--------|------------|-----------|')
+    for author,count,rates in zip(authors,counts,rates):
+        print(f'| <a href=https://www.reddit.com/user/{author}/>{author}</a> | {count} | {rate} |')
 
 def getsubmissiondeltas(max=None,log=True,save=None):
     submission_dates = wsbs.aggregate( [ {
