@@ -173,7 +173,7 @@ def makeauthorfigures():
     plt.yscale('log')
     _ = plt.savefig('figures/pda_numposts_hist.png')
     
-    num, authors, counts = get_authors(show=False, min=6)
+    num, authors, counts, rates = get_authors(show=False, min=6)
     fig, ax = plt.subplots(1,1, figsize=(6,6))
     ax.barh(y=authors, width=counts)
     ax.set_ylabel('Most Productive Posters')
@@ -185,7 +185,7 @@ def makebiggestauthortable():
     num, authors, counts, rates = groupbyauthor(show=False, min=6)
     print('| Poster | Post Count | Posts/Day |')
     print('|--------|------------|-----------|')
-    for author,count,rates in zip(authors,counts,rates):
+    for author,count,rate in zip(authors,counts,rates):
         print(f'| <a href=https://www.reddit.com/user/{author}/>{author}</a> | {count} | {rate} |')
 
 def getsubmissiondeltas(max=None,log=True,save=None):

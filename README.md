@@ -41,15 +41,7 @@ NameError: name 'groupbyauthor' is not defined submission authors are represente
 ![Figure 1](figures/pda_numposts.png)
 ![Figure 2](figures/pda_numposts_hist.png)
 ![Figure 3](figures/pda_biggestposters.png)
----------------------------------------------------------------------------ValueError                                Traceback (most recent call last)<ipython-input-1-b7568e4c4ed2> in <module>
-----> 1 makeauthorfigures()
-~/RPP/Capstones/1/wsba.py in makeauthorfigures()
-    174     _ = plt.savefig('figures/pda_numposts_hist.png')
-    175 
---> 176     num, authors, counts = get_authors(show=False, min=6)
-    177     fig, ax = plt.subplots(1,1, figsize=(6,6))
-    178     ax.barh(y=authors, width=counts)
-ValueError: too many values to unpack (expected 3)<Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
+<Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
 
 ---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)<ipython-input-1-0c171e874a66> in <module>
 ----> 1 makebiggestauthortable()
