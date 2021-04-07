@@ -46,10 +46,16 @@ NameError: name 'groupbyauthor' is not defined submission authors are represente
 ~/RPP/Capstones/1/wsba.py in makeauthorfigures()
     145 
     146 def makeauthorfigures():
---> 147     (num_unique_posters, posters, post_counts) = get_authors(show=false)
+--> 147     (num_unique_posters, posters, post_counts) = get_authors(show=False)
     148 
     149     fig, ax = plt.subplots(1,1, figsize=(6,6))
-NameError: name 'false' is not defined
+~/RPP/Capstones/1/wsba.py in get_authors(show, min, max)
+    114             "$project": {
+    115                 "count": 1,
+--> 116                 "rate": { "$divide": ["$count",get_days()] }
+    117             } 
+    118         },
+NameError: name 'get_days' is not defined
 
 ---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)<ipython-input-1-0c171e874a66> in <module>
 ----> 1 makebiggestauthortable()

@@ -144,7 +144,7 @@ def get_authors(show=False, min=0, max=999_999):
     return (i, posters, post_counts, post_rates)
 
 def makeauthorfigures():
-    (num_unique_posters, posters, post_counts) = get_authors(show=false)
+    (num_unique_posters, posters, post_counts) = get_authors(show=False)
 
     fig, ax = plt.subplots(1,1, figsize=(6,6))
     ax.scatter(
