@@ -144,7 +144,7 @@ def get_authors(show=False, min=0, max=999_999):
     return (i, posters, post_counts, post_rates)
 
 def makeauthorfigures():
-    (num_unique_posters, posters, post_counts) = groupbyauthor()
+    (num_unique_posters, posters, post_counts) = get_authors(show=false)
 
     fig, ax = plt.subplots(1,1, figsize=(6,6))
     ax.scatter(
@@ -168,7 +168,7 @@ def makeauthorfigures():
     plt.yscale('log')
     _ = plt.savefig('figures/pda_numposts_hist.png')
     
-    num, authors, counts = groupbyauthor(show=False, min=6)
+    num, authors, counts = get_authors(show=False, min=6)
     fig, ax = plt.subplots(1,1, figsize=(6,6))
     ax.barh(y=authors, width=counts)
     ax.set_ylabel('Most Productive Posters')
