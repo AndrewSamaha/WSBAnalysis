@@ -41,30 +41,24 @@ NameError: name 'groupbyauthor' is not defined submission authors are represente
 ![Figure 1](figures/pda_numposts.png)
 ![Figure 2](figures/pda_numposts_hist.png)
 ![Figure 3](figures/pda_biggestposters.png)
----------------------------------------------------------------------------NameError                                 Traceback (most recent call last)<ipython-input-1-b7568e4c4ed2> in <module>
+---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)<ipython-input-1-b7568e4c4ed2> in <module>
 ----> 1 makeauthorfigures()
 ~/RPP/Capstones/1/wsba.py in makeauthorfigures()
-    145 
-    146 def makeauthorfigures():
---> 147     (num_unique_posters, posters, post_counts) = get_authors(show=False)
-    148 
-    149     fig, ax = plt.subplots(1,1, figsize=(6,6))
-~/RPP/Capstones/1/wsba.py in get_authors(show, min, max)
-    114             "$project": {
-    115                 "count": 1,
---> 116                 "rate": { "$divide": ["$count",get_days()] }
-    117             } 
-    118         },
-NameError: name 'get_days' is not defined
+    150 
+    151 def makeauthorfigures():
+--> 152     (num_unique_posters, posters, post_counts) = get_authors(show=False)
+    153 
+    154     fig, ax = plt.subplots(1,1, figsize=(6,6))
+ValueError: too many values to unpack (expected 3)
 
 ---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)<ipython-input-1-0c171e874a66> in <module>
 ----> 1 makebiggestauthortable()
 ~/RPP/Capstones/1/wsba.py in makebiggestauthortable()
-    178 
-    179 def makebiggestauthortable():
---> 180     num, authors, counts, rates = groupbyauthor(show=False, min=6)
-    181     print('| Poster | Post Count | Posts/Day |')
-    182     print('|--------|------------|-----------|')
+    183 
+    184 def makebiggestauthortable():
+--> 185     num, authors, counts, rates = groupbyauthor(show=False, min=6)
+    186     print('| Poster | Post Count | Posts/Day |')
+    187     print('|--------|------------|-----------|')
 NameError: name 'groupbyauthor' is not defined
 
 # Some Initial Observations

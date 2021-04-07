@@ -98,6 +98,11 @@ def getdaterange():
     #print(first,last)
     return first,last
 
+def get_days():
+    first,last = getdaterange()
+    diff = last['date']-first['date']
+    return diff.days+diff.seconds/60/60/24
+
 def get_authors(show=False, min=0, max=999_999):
     '''
     returns num_unique_posters, poster_names, poster_counts
