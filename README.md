@@ -12,7 +12,7 @@ Hence, the structure of this online community is worthy of investigation because
 
 # The Data
 
-As of 04/06/21, the dataset consisted of 1967 submissions to r/WallStreetBets from 03/18/21 to 04/05/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 04/06/21, the dataset consisted of 2042 submissions to r/WallStreetBets from 03/18/21 to 04/06/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -45,21 +45,22 @@ NameError: name 'groupbyauthor' is not defined submission authors are represente
 
 | Poster | Post Count | Posts/Day |
 |--------|------------|-----------|
-| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 54 | 2.98 |
-| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.99 |
-| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 13 | 0.72 |
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 11 | 0.61 |
-| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 11 | 0.61 |
-| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 10 | 0.55 |
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.44 |
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 | 0.44 |
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.44 |
-| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.39 |
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.39 |
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.33 |
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.33 |
-| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.33 |
-| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.33 |
+| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 58 | 3.01 |
+| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.93 |
+| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 15 | 0.78 |
+| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 12 | 0.62 |
+| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 12 | 0.62 |
+| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 12 | 0.62 |
+| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 | 0.41 |
+| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.41 |
+| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.41 |
+| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.36 |
+| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.36 |
+| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.31 |
+| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.31 |
+| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.31 |
+| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.31 |
+| <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 6 | 0.31 |
 
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word
