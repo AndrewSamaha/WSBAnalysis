@@ -45,21 +45,21 @@ NameError: name 'groupbyauthor' is not defined submission authors are represente
 
 | Poster | Post Count | Posts/Day |
 |--------|------------|-----------|
-| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 54 | 2.97797158876214 |
-| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.9926571962540467 |
-| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 13 | 0.7169190861834782 |
-| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 11 | 0.6066238421552508 |
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 11 | 0.6066238421552508 |
-| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 10 | 0.5514762201411371 |
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.44118097611290963 |
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 | 0.44118097611290963 |
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.44118097611290963 |
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.38603335409879597 |
-| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.38603335409879597 |
-| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.33088573208468225 |
-| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.33088573208468225 |
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.33088573208468225 |
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.33088573208468225 |
+| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 54 | 2.98 |
+| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.99 |
+| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 13 | 0.72 |
+| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 11 | 0.61 |
+| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 11 | 0.61 |
+| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 10 | 0.55 |
+| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.44 |
+| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 8 | 0.44 |
+| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.44 |
+| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.39 |
+| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.39 |
+| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.33 |
+| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.33 |
+| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.33 |
+| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.33 |
 
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word
