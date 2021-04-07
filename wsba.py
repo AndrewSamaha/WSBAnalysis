@@ -182,7 +182,7 @@ def makeauthorfigures():
     _ = plt.savefig('figures/pda_biggestposters.png')
     
 def makebiggestauthortable():
-    num, authors, counts, rates = groupbyauthor(show=False, min=6)
+    num, authors, counts, rates = get_authors(show=False, min=6)
     print('| Poster | Post Count | Posts/Day |')
     print('|--------|------------|-----------|')
     for author,count,rate in zip(authors,counts,rates):
