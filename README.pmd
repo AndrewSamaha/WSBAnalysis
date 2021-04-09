@@ -42,7 +42,7 @@ A Sample:
 
 # The authors
 A total of <% 
-(num, b, c) = groupbyauthor() 
+(num, b, c, d) = get_authors() 
 print(num)
 %> submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
 ![Figure 1](figures/pda_numposts.png)
@@ -156,7 +156,7 @@ What's the average exposure, average upvote ratio for all posters versus the mos
 1. Python
 1. Jupyter Labs (pda/eda)
 1. WSBScraper/MongoDB/Docker (backend)
-1. Matplotlib (visualization)
+1. Matplotlib/Seaborn (visualization)
 1. PWeave (CI/CD: this readme)
 
 _This file was compiled on <%print(datetime.date.today())%>._
