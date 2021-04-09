@@ -730,7 +730,8 @@ def graph_user_scores(data=None, fig=None, ax=None, xfield='postRate', yfield='t
     
     if fig == None and ax == None:
         fig, ax = plt.subplots(1,1, figsize=(6,6))
-        
+    if label:
+        label += f' n={len(x)}'
     ax.scatter(x, y, alpha=.5,color=color,label=label)
     if regression:
         ax.plot(
