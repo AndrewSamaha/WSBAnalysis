@@ -52,6 +52,8 @@ print(num)
 
 <% makebiggestauthortable() %>
 
+<% compare_posters() %>
+
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word
 1. Stocks are sometimes written beginning with a $ and ending with a space

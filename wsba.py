@@ -687,6 +687,114 @@ def fig_field_by_field(fielda='score',fieldb='score',fielda_max=None,logx=False,
 
 def count(query):
     return wsbs.count_documents(query)
+
+def graph_user_scores(data=None, fig=None, ax=None, xfield='postRate', yfield='totalScore',label=None,logx=False,logy=False,save=False,ymax=None,ymin=None,median=False,mean=False,xmax=None,xmin=None,spearman=True,pearson=True,regression=True,color='blue'):
+    if data == None:
+        data = get_authors(show=False,returnDictionary=True)
+        
+    x_master = data[xfield]
+    y_master = data[yfield]
+    x = []
+    y = []
+    for xi,yi in zip(x_master,y_master):
+        if xmax and xi > xmax:
+            continue
+        if ymax and yi > ymax:
+            continue
+        if xmin and xi < xmin:
+            continue
+        if ymin and yi < ymin:
+            continue
+            
+        x.append(xi)
+        y.append(yi)
     
+    if spearman:
+        spearman_rho, spearman_p = stats.spearmanr(a=x, b=y)
+        print(f'spearman_rho={spearman_rho}   spearman_p={spearman_p}')
+    
+    if pearson:
+        pearson_r, pearson_p = stats.pearsonr(x=x, y=y)
+        print(f'pearson_r={pearson_r}   pearson_p={pearson_p}')
+    
+    lr_m=0
+    lr_b=0
+    lr_r=0
+    lr_p=0
+    lr_stredd = 0
+    if regression:
+        lr_m, lr_b, lr_r, lr_p, lr_stredd = stats.linregress(x, y)
+        def lr(x):
+            return lr_m * x + lr_b
+        print("regression; pearson r: ", lr_r, lr_p, lr_stredd)
+    
+    if fig == None and ax == None:
+        fig, ax = plt.subplots(1,1, figsize=(6,6))
+        
+    ax.scatter(x, y, alpha=.5,color=color,label=label)
+    if regression:
+        ax.plot(
+            [min(x),max(x)], 
+            [lr_m * min(x) + lr_b,lr_m * max(x) + lr_b],
+            label=f'y={round(lr_m,2)}x+{round(lr_b)}, r={round(lr_r,2)} p={round(lr_p,4)}',
+            c='red',
+            linestyle='--'
+        )
+        print([min(x),max(x)])
+        print([lr_m * min(x) + lr_b,lr_m * max(x) + lr_b])
+    ax.set_xlabel(xfield)
+    ax.set_ylabel(yfield)
+    
+    if median:
+        median='median'
+        from statistics import median
+        xmedian = median(x)
+        ymedian = median(y)
+        ax.scatter([xmedian],[ymedian],c='red',marker='o',s=100,label=f'median={round(xmedian,2)}, {round(ymedian,2)}',alpha=.5)
+    
+    if mean:
+        mean='mean'
+        from statistics import mean
+        xmean = mean(x)
+        ymean = mean(y)
+        ax.scatter([xmean],[ymean],c='red',marker='x',s=100,label=f'mean={round(xmean,2)}, {round(ymean,2)}',alpha=.5)
+        
+    if ymin!=None:
+        plt.gca().set_ylim(bottom=ymin)
+    if ymax:
+        plt.gca().set_ylim(top=ymax)
+    if xmax:
+        plt.gca().set_xlim(right=xmax)
+    if xmin!=None:
+        plt.gca().set_xlim(left=xmin)
+        
+    if logx:
+        plt.xscale('log')
+        logx = '_logx'
+    else:
+        logx = ''
+
+    if logy:
+        plt.yscale('log')
+        logy = '_logy'
+    else:
+        logy = ''
+    if median or mean or label:
+        ax.legend()
+        
+    _=plt.tight_layout()
+    if save:
+        filename = f'figures/postcount_by_avgscoreperpost.png'
+        _=plt.savefig(filename)
+        print(f'![Figure]({filename})')
+        return
+    return fig,ax
+
+def compare_posters():
+    blue_data = get_authors(show=False,returnDictionary=True,max=1)
+    fig,ax = graph_user_scores(data=blue_data,xfield='avgCommentsPerPost', yfield='avgScorePerPost',logx=True, logy=True,xmin=1, ymin=1,color='pink',regression=False,label='One-Time Posters')
+    green_data = get_authors(show=False, returnDictionary=True,min=4)
+    graph_user_scores(data=green_data,fig=fig,ax=ax,xfield='avgCommentsPerPost', yfield='avgScorePerPost',logx=True, logy=True,xmin=1, ymin=1,color='blue',regression=False,label='Frequent Posters',save=True)
+
 if __name__ != '__main__':
     setup()
