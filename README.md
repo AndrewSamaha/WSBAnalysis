@@ -40,15 +40,25 @@ A total of 1631 submission authors are represented in the data. The plot below s
 ![Figure 3](figures/pda_biggestposters.png)
 <Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
 
----------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)<ipython-input-1-0c171e874a66> in <module>
-----> 1 makebiggestauthortable()
-~/RPP/Capstones/1/wsba.py in makebiggestauthortable()
-    183 
-    184 def makebiggestauthortable():
---> 185     data = get_authors(show=False, min=6, returnDictionary=True)
-    186     print('| Poster | Post Count | Posts/Day | Avg Score/Post | Avg Comments/Post |')
-    187     print('|--------|------------|-----------|----------------|-------------------|')
-TypeError: get_authors() got an unexpected keyword argument 'returnDictionary'
+| Poster | Post Count | Posts/Day | Avg Score/Post | Avg Comments/Post |
+|--------|------------|-----------|----------------|-------------------|
+| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 66 | 3.11 | 7256.742424242424 | 17613.803030303032 
+| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.85 | 64.88888888888889 | 41.5 
+| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 17 | 0.8 | 1456.2941176470588 | 140.52941176470588 
+| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 14 | 0.66 | 0.2857142857142857 | 1607.642857142857 
+| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 14 | 0.66 | 450.5 | 90.5 
+| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 13 | 0.61 | 82.3076923076923 | 53.15384615384615 
+| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 9 | 0.42 | 108.33333333333333 | 46.22222222222222 
+| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.38 | 120.5 | 72.5 
+| <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.38 | 35.125 | 22.0 
+| <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 8 | 0.38 | 48.625 | 33.0 
+| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.38 | 757.0 | 152.625 
+| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.33 | 3458.0 | 163.57142857142858 
+| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.33 | 3277.4285714285716 | 266.2857142857143 
+| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.28 | 479.3333333333333 | 49.833333333333336 
+| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.28 | 200.83333333333334 | 58.333333333333336 
+| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.28 | 1256.5 | 115.33333333333333 
+| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.28 | 29.666666666666668 | 11.666666666666666
 
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word

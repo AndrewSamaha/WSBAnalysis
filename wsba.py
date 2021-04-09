@@ -103,22 +103,27 @@ def get_days():
     diff = last['date']-first['date']
     return diff.days+diff.seconds/60/60/24
 
-def get_authors(show=False, min=0, max=999_999):
-    '''
-    returns num_unique_posters, poster_names, poster_counts
-    '''
-    global wsbs
+def get_authors(show=False, min=0, max=999_999, sortby='rate', returnDictionary=False):
     authors = wsbs.aggregate([ 
         { 
             "$group": {
                 "_id": "$author",
-                "count": { "$sum": 1 }
+                "count": { "$sum": 1 },
+                "totalscore": { "$sum": "$score"},
+                "totalcomments": { "$sum": "$num_comments"}
             } 
         },
         { 
             "$project": {
+                #"author": "$author",
                 "count": 1,
-                "rate": { "$divide": ["$count",get_days()] }
+                "totalscore": "$totalscore",
+                "totalcomments": "$totalcomments",
+                "rate": { "$divide": ["$count",get_days()] },
+                "avgScorePerPost": { "$divide": ["$totalscore","$count"] },
+                "avgScorePerDay": { "$divide": ["$totalscore", get_days()] },
+                "avgCommentsPerPost": { "$divide": ["$totalcomments","$count"] },
+                "avgCommentsPerDay": { "$divide": ["$totalscore", get_days()] }
             } 
         },
         {    
@@ -128,25 +133,47 @@ def get_authors(show=False, min=0, max=999_999):
         }
     ])
     i = 0
+    data = dict()
+    data['posters'] = []
+    data['postCount'] = []
+    data['postRate'] = []
+    data['totalScore'] = []
+    data['totalComments'] = []
+    data['avgScorePerDay'] = []
+    data['avgScorePerPost'] = []
+    data['avgCommentsPerDay'] = []
+    data['avgCommentsPerPost'] = []
     
     posters = []
     post_counts = []
     post_rates = []
     for x in authors:
-        #print(x, x['count'])
+        #if i > 10:
+        #    return
         
         if x['count'] > 1 and show:
             pass
     
         if x['count'] >= min and x['count'] <= max:
             if show:
-                print(x,round(x['count'],2),round(x['rate'],2))
+                print(x)
+                #print(x,round(x['count'],2),round(x['rate'],2),round(x['totalscore'],2),round(x['avgScorePerPost'],2),round(x['avgScorePerDay'],2))
             i += 1
-            post_counts.append(x['count'])
-            posters.append(x['_id'])
-            post_rates.append(x['rate'])
+            data['postCount'].append(x['count'])
+            data['posters'].append(x['_id'])
+            data['postRate'].append(x['rate'])
+            data['totalScore'].append(x['totalscore'])
+            data['totalComments'].append(x['totalcomments'])
+            data['avgScorePerDay'].append(x['avgScorePerDay'])
+            data['avgScorePerPost'].append(x['avgScorePerPost'])
+            data['avgCommentsPerDay'].append(x['avgCommentsPerDay'])
+            data['avgCommentsPerPost'].append(x['avgCommentsPerPost'])
             
-    return (i, posters, post_counts, post_rates)
+    
+    if returnDictionary:
+        return data
+    
+    return (i, data['posters'], data['postCount'], data['postRate'])
 
 def makeauthorfigures():
     (num_unique_posters, posters, post_counts, post_rates) = get_authors(show=False)
