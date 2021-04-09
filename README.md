@@ -42,23 +42,23 @@ A total of 1631 submission authors are represented in the data. The plot below s
 
 | Poster | Post Count | Posts/Day | Avg Score/Post | Avg Comments/Post |
 |--------|------------|-----------|----------------|-------------------|
-| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 66 | 3.11 | 7256.742424242424 | 17613.803030303032 
-| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.85 | 64.88888888888889 | 41.5 
-| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 17 | 0.8 | 1456.2941176470588 | 140.52941176470588 
-| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 14 | 0.66 | 0.2857142857142857 | 1607.642857142857 
-| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 14 | 0.66 | 450.5 | 90.5 
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 13 | 0.61 | 82.3076923076923 | 53.15384615384615 
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 9 | 0.42 | 108.33333333333333 | 46.22222222222222 
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.38 | 120.5 | 72.5 
-| <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.38 | 35.125 | 22.0 
-| <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 8 | 0.38 | 48.625 | 33.0 
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.38 | 757.0 | 152.625 
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.33 | 3458.0 | 163.57142857142858 
-| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.33 | 3277.4285714285716 | 266.2857142857143 
-| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.28 | 479.3333333333333 | 49.833333333333336 
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.28 | 200.83333333333334 | 58.333333333333336 
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.28 | 1256.5 | 115.33333333333333 
-| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.28 | 29.666666666666668 | 11.666666666666666
+| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 66 | 3.11 | 7257.0 | 17614.0 
+| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.85 | 65.0 | 42.0 
+| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 17 | 0.8 | 1456.0 | 141.0 
+| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 14 | 0.66 | 450.0 | 90.0 
+| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 14 | 0.66 | 0.0 | 1608.0 
+| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 13 | 0.61 | 82.0 | 53.0 
+| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 9 | 0.42 | 108.0 | 46.0 
+| <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 8 | 0.38 | 49.0 | 33.0 
+| <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.38 | 35.0 | 22.0 
+| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.38 | 120.0 | 72.0 
+| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.38 | 757.0 | 153.0 
+| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.33 | 3458.0 | 164.0 
+| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.33 | 3277.0 | 266.0 
+| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.28 | 479.0 | 50.0 
+| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.28 | 30.0 | 12.0 
+| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.28 | 1256.0 | 115.0 
+| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.28 | 201.0 | 58.0
 
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word

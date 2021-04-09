@@ -213,7 +213,7 @@ def makebiggestauthortable():
     print('| Poster | Post Count | Posts/Day | Avg Score/Post | Avg Comments/Post |')
     print('|--------|------------|-----------|----------------|-------------------|')
     for author,count,rate,scores,comments in zip(data['posters'],data['postCount'],data['postRate'],data['avgScorePerPost'],data['avgCommentsPerPost']):
-        print(f'| <a href=https://www.reddit.com/user/{author}/>{author}</a> | {count} | {round(rate,2)} | {scores} | {comments} ')
+        print(f'| <a href=https://www.reddit.com/user/{author}/>{author}</a> | {count} | {round(rate,2)} | {round(scores,0)} | {round(comments,0)} ')
 
 def getsubmissiondeltas(max=None,log=True,save=None):
     submission_dates = wsbs.aggregate( [ {
