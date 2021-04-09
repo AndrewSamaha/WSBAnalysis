@@ -182,11 +182,11 @@ def makeauthorfigures():
     _ = plt.savefig('figures/pda_biggestposters.png')
     
 def makebiggestauthortable():
-    num, authors, counts, rates = get_authors(show=False, min=6)
-    print('| Poster | Post Count | Posts/Day |')
-    print('|--------|------------|-----------|')
-    for author,count,rate in zip(authors,counts,rates):
-        print(f'| <a href=https://www.reddit.com/user/{author}/>{author}</a> | {count} | {round(rate,2)} |')
+    data = get_authors(show=False, min=6, returnDictionary=True)
+    print('| Poster | Post Count | Posts/Day | Avg Score/Post | Avg Comments/Post |')
+    print('|--------|------------|-----------|----------------|-------------------|')
+    for author,count,rate,scores,comments in zip(data['posters'],data['postCount'],data['postRate'],data['avgScorePerPost'],data['avgCommentsPerPost']):
+        print(f'| <a href=https://www.reddit.com/user/{author}/>{author}</a> | {count} | {round(rate,2)} | {scores} | {comments} ')
 
 def getsubmissiondeltas(max=None,log=True,save=None):
     submission_dates = wsbs.aggregate( [ {

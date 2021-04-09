@@ -12,7 +12,7 @@ Hence, the structure of this online community is worthy of investigation because
 
 # The Data
 
-As of 04/08/21, the dataset consisted of 2215 submissions to r/WallStreetBets from 03/18/21 to 04/08/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 04/08/21, the dataset consisted of 2215 submissions to r/WallStreetBets from a period of 21.247245370370372 days beginning 03/18/21 and ending 04/08/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -40,25 +40,15 @@ A total of 1631 submission authors are represented in the data. The plot below s
 ![Figure 3](figures/pda_biggestposters.png)
 <Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
 
-| Poster | Post Count | Posts/Day |
-|--------|------------|-----------|
-| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 66 | 3.11 |
-| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.85 |
-| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 17 | 0.8 |
-| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 14 | 0.66 |
-| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 14 | 0.66 |
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 13 | 0.61 |
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 9 | 0.42 |
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.38 |
-| <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 8 | 0.38 |
-| <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.38 |
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.38 |
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.33 |
-| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.33 |
-| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.28 |
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.28 |
-| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.28 |
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.28 |
+---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)<ipython-input-1-0c171e874a66> in <module>
+----> 1 makebiggestauthortable()
+~/RPP/Capstones/1/wsba.py in makebiggestauthortable()
+    183 
+    184 def makebiggestauthortable():
+--> 185     data = get_authors(show=False, min=6, returnDictionary=True)
+    186     print('| Poster | Post Count | Posts/Day | Avg Score/Post | Avg Comments/Post |')
+    187     print('|--------|------------|-----------|----------------|-------------------|')
+TypeError: get_authors() got an unexpected keyword argument 'returnDictionary'
 
 # Some Initial Observations
 1. Stocks are sometimes written in capital letters in the middle of a word

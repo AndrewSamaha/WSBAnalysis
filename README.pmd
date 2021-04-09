@@ -19,7 +19,7 @@ from wsba import *
 
 # The Data
 <% first,last = getdaterange() %>
-As of <%print(datetime.date.today().strftime('%m/%d/%y'))%>, the dataset consisted of <%= getnumsubmissions() %> submissions to r/WallStreetBets from <%print(first['date'].strftime('%m/%d/%y'))%> to <%print(last['date'].strftime('%m/%d/%y'))%>. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of <%print(datetime.date.today().strftime('%m/%d/%y'))%>, the dataset consisted of <%= getnumsubmissions() %> submissions to r/WallStreetBets from a period of <%= get_days() %> days beginning <%print(first['date'].strftime('%m/%d/%y'))%> and ending <%print(last['date'].strftime('%m/%d/%y'))%>. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
