@@ -688,7 +688,7 @@ def fig_field_by_field(fielda='score',fieldb='score',fielda_max=None,logx=False,
 def count(query):
     return wsbs.count_documents(query)
 
-def graph_user_scores(data=None, fig=None, ax=None, xfield='postRate', yfield='totalScore',label=None,logx=False,logy=False,save=False,ymax=None,ymin=None,median=False,mean=False,xmax=None,xmin=None,spearman=True,pearson=True,regression=True,color='blue'):
+def graph_user_scores(data=None, fig=None, ax=None, xfield='postRate', yfield='totalScore',label=None,logx=False,logy=False,save=False,ymax=None,ymin=None,median=False,mean=False,xmax=None,xmin=None,spearman=True,pearson=True,regression=True,color='blue',printRegression=False):
     if data == None:
         data = get_authors(show=False,returnDictionary=True)
         
@@ -711,11 +711,13 @@ def graph_user_scores(data=None, fig=None, ax=None, xfield='postRate', yfield='t
     
     if spearman:
         spearman_rho, spearman_p = stats.spearmanr(a=x, b=y)
-        print(f'spearman_rho={spearman_rho}   spearman_p={spearman_p}')
+        if not printRegression:
+            print(f'spearman_rho={spearman_rho}   spearman_p={spearman_p}')
     
     if pearson:
         pearson_r, pearson_p = stats.pearsonr(x=x, y=y)
-        print(f'pearson_r={pearson_r}   pearson_p={pearson_p}')
+        if not printRegression:
+            print(f'pearson_r={pearson_r}   pearson_p={pearson_p}')
     
     lr_m=0
     lr_b=0
