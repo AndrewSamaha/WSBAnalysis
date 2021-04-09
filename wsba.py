@@ -728,7 +728,8 @@ def graph_user_scores(data=None, fig=None, ax=None, xfield='postRate', yfield='t
         lr_m, lr_b, lr_r, lr_p, lr_stredd = stats.linregress(x, y)
         def lr(x):
             return lr_m * x + lr_b
-        print("regression; pearson r: ", lr_r, lr_p, lr_stredd)
+        if not printRegression:
+            print("regression; pearson r: ", lr_r, lr_p, lr_stredd)
     
     if fig == None and ax == None:
         fig, ax = plt.subplots(1,1, figsize=(6,6))
@@ -743,8 +744,9 @@ def graph_user_scores(data=None, fig=None, ax=None, xfield='postRate', yfield='t
             c='red',
             linestyle='--'
         )
-        print([min(x),max(x)])
-        print([lr_m * min(x) + lr_b,lr_m * max(x) + lr_b])
+        if not printRegression:
+            print([min(x),max(x)])
+            print([lr_m * min(x) + lr_b,lr_m * max(x) + lr_b])
     ax.set_xlabel(xfield)
     ax.set_ylabel(yfield)
     

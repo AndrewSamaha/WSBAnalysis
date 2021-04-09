@@ -53,8 +53,8 @@ A total of 1631 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 8 | 0.38 | 48 | 33 
 | <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.38 | 35 | 22 
 | <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.38 | 757 | 152 
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.33 | 3458 | 163 
 | <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.33 | 3277 | 266 
+| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.33 | 3458 | 163 
 | <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.28 | 479 | 49 
 | <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.28 | 200 | 58 
 | <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.28 | 29 | 11 
@@ -63,7 +63,7 @@ A total of 1631 submission authors are represented in the data. The plot below s
 spearman_rho=0.839864267041429   spearman_p=0.0
 pearson_r=0.6698040294042433   pearson_p=2.836326377842125e-170
 spearman_rho=0.9171945701357467   spearman_p=3.2235508580374537e-21
-pearson_r=0.3257603668170612   pearson_p=0.019661358687253966
+pearson_r=0.3257603668170613   pearson_p=0.019661358687253966
 ![Figure](figures/postcount_by_avgscoreperpost.png)
 <Figure size 432x432 with 1 Axes>
 
