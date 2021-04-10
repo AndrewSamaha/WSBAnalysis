@@ -8,11 +8,14 @@ See also [Building an algorithmic trading strategy with r/wallstreetbets discuss
 
 Hence, the structure of this online community is worthy of investigation because of its ability to steer the behavior of a large number of invidivual investors in a way that negates contrary messaging of top-down institutional decision makers and actors. With that in mind, the purpose of this investigation is to gain an understanding of the structure of the online community, how it communicates about stock, how messages about stocks disseminate and maintain in the discourse, and so on.
 
+# Standup
+I'm interested in understanding posting and post-popularity in WallStreetBets. WallStreetBets is online community of individual and often unruly investors. Their communication style is very meme-driven and they are very anti-establishment. They value underdogs, individual investors, over 'tranditional' institutions and their research products. When they as a group, they can have surprising effects on the market, e.g., Game Stop. 
+
 
 
 # The Data
 
-As of 04/08/21, the dataset consisted of 2215 submissions to r/WallStreetBets from a period of 21.247245370370372 days beginning 03/18/21 and ending 04/08/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 04/10/21, the dataset consisted of 2335 submissions to r/WallStreetBets from a period of 22.878576388888888 days beginning 03/18/21 and ending 04/10/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -34,7 +37,7 @@ A Sample:
 ```
 
 # The authors
-A total of 1631 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
+A total of 1700 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
 ![Figure 1](figures/pda_numposts.png)
 ![Figure 2](figures/pda_numposts_hist.png)
 ![Figure 3](figures/pda_biggestposters.png)
@@ -42,28 +45,30 @@ A total of 1631 submission authors are represented in the data. The plot below s
 
 | Poster | Post Count | Posts/Day | Avg Score/Post | Avg Comments/Post |
 |--------|------------|-----------|----------------|-------------------|
-| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 66 | 3.11 | 7256 | 17613 
-| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.85 | 64 | 41 
-| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 17 | 0.8 | 1456 | 140 
-| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 14 | 0.66 | 0 | 1607 
-| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 14 | 0.66 | 450 | 90 
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 13 | 0.61 | 82 | 53 
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 9 | 0.42 | 108 | 46 
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.38 | 120 | 72 
-| <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 8 | 0.38 | 48 | 33 
-| <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.38 | 35 | 22 
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.38 | 757 | 152 
-| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.33 | 3277 | 266 
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.33 | 3458 | 163 
-| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.28 | 479 | 49 
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.28 | 200 | 58 
-| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.28 | 29 | 11 
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.28 | 1256 | 115
+| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 71 | 3.1 | 7072 | 17258 
+| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.79 | 64 | 41 
+| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 18 | 0.79 | 1419 | 138 
+| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 15 | 0.66 | 0 | 1541 
+| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 14 | 0.61 | 455 | 91 
+| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 13 | 0.57 | 83 | 53 
+| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 10 | 0.44 | 105 | 45 
+| <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 8 | 0.35 | 114 | 38 
+| <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.35 | 38 | 22 
+| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.35 | 120 | 72 
+| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.35 | 757 | 152 
+| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.31 | 3276 | 266 
+| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.31 | 3458 | 163 
+| <a href=https://www.reddit.com/user/bettercallsaully/>bettercallsaully</a> | 6 | 0.26 | 46 | 34 
+| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.26 | 479 | 49 
+| <a href=https://www.reddit.com/user/628rand/>628rand</a> | 6 | 0.26 | 43 | 12 
+| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.26 | 29 | 11 
+| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.26 | 1256 | 115 
+| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.26 | 199 | 58
 
-spearman_rho=0.839864267041429   spearman_p=0.0
-pearson_r=0.6698040294042433   pearson_p=2.836326377842125e-170
-spearman_rho=0.9171945701357467   spearman_p=3.2235508580374537e-21
-pearson_r=0.3257603668170613   pearson_p=0.019661358687253966
+spearman_rho=0.8365601842433079   spearman_p=0.0
+pearson_r=0.6749361615367877   pearson_p=1.6216574146313014e-179
+spearman_rho=0.9167746953590874   spearman_p=1.392563640116421e-23
+pearson_r=0.32848335530484774   pearson_p=0.012606323390768778
 ![Figure](figures/postcount_by_avgscoreperpost.png)
 <Figure size 432x432 with 1 Axes>
 
@@ -190,4 +195,4 @@ What's the average exposure, average upvote ratio for all posters versus the mos
 1. Matplotlib/Seaborn (visualization)
 1. PWeave (CI/CD: this readme)
 
-_This file was compiled on 2021-04-08._
+_This file was compiled on 2021-04-10._

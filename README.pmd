@@ -8,6 +8,9 @@ See also [Building an algorithmic trading strategy with r/wallstreetbets discuss
 
 Hence, the structure of this online community is worthy of investigation because of its ability to steer the behavior of a large number of invidivual investors in a way that negates contrary messaging of top-down institutional decision makers and actors. With that in mind, the purpose of this investigation is to gain an understanding of the structure of the online community, how it communicates about stock, how messages about stocks disseminate and maintain in the discourse, and so on.
 
+# Standup
+I'm interested in understanding posting and post-popularity in WallStreetBets. WallStreetBets is online community of individual and often unruly investors. Their communication style is very meme-driven and they are very anti-establishment. They value underdogs, individual investors, over 'tranditional' institutions and their research products. When they as a group, they can have surprising effects on the market, e.g., Game Stop. 
+
 <% 
 # In order to import local python files, https://stackoverflow.com/questions/47138793/pweave-cannot-import-local-module
 import os
