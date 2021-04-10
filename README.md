@@ -52,18 +52,18 @@ A total of 1700 submission authors are represented in the data. The plot below s
 | <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 14 | 0.61 | 455 | 91 
 | <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 13 | 0.57 | 83 | 53 
 | <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 10 | 0.44 | 105 | 45 
+| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.35 | 120 | 72 
 | <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 8 | 0.35 | 114 | 38 
 | <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.35 | 38 | 22 
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.35 | 120 | 72 
 | <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.35 | 757 | 152 
 | <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.31 | 3276 | 266 
 | <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.31 | 3458 | 163 
 | <a href=https://www.reddit.com/user/bettercallsaully/>bettercallsaully</a> | 6 | 0.26 | 46 | 34 
 | <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.26 | 479 | 49 
 | <a href=https://www.reddit.com/user/628rand/>628rand</a> | 6 | 0.26 | 43 | 12 
+| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.26 | 199 | 58 
 | <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.26 | 29 | 11 
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.26 | 1256 | 115 
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.26 | 199 | 58
+| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.26 | 1256 | 115
 
 spearman_rho=0.8365601842433079   spearman_p=0.0
 pearson_r=0.6749361615367877   pearson_p=1.6216574146313014e-179
