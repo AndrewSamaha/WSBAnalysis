@@ -15,7 +15,7 @@ I'm interested in understanding posting and post-popularity in WallStreetBets. W
 
 # The Data
 
-As of 04/10/21, the dataset consisted of 2335 submissions to r/WallStreetBets from a period of 22.878576388888888 days beginning 03/18/21 and ending 04/10/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 04/17/21, the dataset consisted of 2853 submissions to r/WallStreetBets from a period of 29.95883101851852 days beginning 03/18/21 and ending 04/17/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -37,7 +37,7 @@ A Sample:
 ```
 
 # The authors
-A total of 1700 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
+A total of 1992 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
 ![Figure 1](figures/pda_numposts.png)
 ![Figure 2](figures/pda_numposts_hist.png)
 ![Figure 3](figures/pda_biggestposters.png)
@@ -45,30 +45,40 @@ A total of 1700 submission authors are represented in the data. The plot below s
 
 | Poster | Post Count | Posts/Day | Avg Score/Post | Avg Comments/Post |
 |--------|------------|-----------|----------------|-------------------|
-| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 71 | 3.1 | 7072 | 17258 
-| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.79 | 64 | 41 
-| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 18 | 0.79 | 1419 | 138 
-| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 15 | 0.66 | 0 | 1541 
-| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 14 | 0.61 | 455 | 91 
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 13 | 0.57 | 83 | 53 
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 10 | 0.44 | 105 | 45 
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 8 | 0.35 | 120 | 72 
-| <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 8 | 0.35 | 114 | 38 
-| <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.35 | 38 | 22 
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.35 | 757 | 152 
-| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.31 | 3276 | 266 
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 7 | 0.31 | 3458 | 163 
-| <a href=https://www.reddit.com/user/bettercallsaully/>bettercallsaully</a> | 6 | 0.26 | 46 | 34 
-| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 6 | 0.26 | 479 | 49 
-| <a href=https://www.reddit.com/user/628rand/>628rand</a> | 6 | 0.26 | 43 | 12 
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.26 | 199 | 58 
-| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 6 | 0.26 | 29 | 11 
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.26 | 1256 | 115
+| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 92 | 3.07 | 6837 | 16717 
+| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 20 | 0.67 | 1323 | 133 
+| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 20 | 0.67 | 0 | 1515 
+| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.6 | 65 | 41 
+| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 17 | 0.57 | 97 | 56 
+| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 14 | 0.47 | 465 | 96 
+| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 11 | 0.37 | 105 | 46 
+| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 11 | 0.37 | 8572 | 234 
+| <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 10 | 0.33 | 183 | 37 
+| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 9 | 0.3 | 130 | 80 
+| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.27 | 758 | 151 
+| <a href=https://www.reddit.com/user/bettercallsaully/>bettercallsaully</a> | 8 | 0.27 | 38 | 30 
+| <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.27 | 41 | 24 
+| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 8 | 0.27 | 2447 | 263 
+| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 7 | 0.23 | 32 | 13 
+| <a href=https://www.reddit.com/user/wiserone29/>wiserone29</a> | 7 | 0.23 | 73 | 36 
+| <a href=https://www.reddit.com/user/628rand/>628rand</a> | 7 | 0.23 | 45 | 11 
+| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.23 | 3277 | 264 
+| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.2 | 1258 | 114 
+| <a href=https://www.reddit.com/user/moazzam0/>moazzam0</a> | 6 | 0.2 | 3302 | 316 
+| <a href=https://www.reddit.com/user/BrigadorskiBanhammer/>BrigadorskiBanhammer</a> | 6 | 0.2 | 184 | 60 
+| <a href=https://www.reddit.com/user/Algeroth81/>Algeroth81</a> | 6 | 0.2 | 23 | 17 
+| <a href=https://www.reddit.com/user/prettyboyv/>prettyboyv</a> | 6 | 0.2 | 2815 | 313 
+| <a href=https://www.reddit.com/user/Tradergurue/>Tradergurue</a> | 6 | 0.2 | 998 | 84 
+| <a href=https://www.reddit.com/user/No-Bandicoot-8980/>No-Bandicoot-8980</a> | 6 | 0.2 | 10178 | 411 
+| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.2 | 201 | 58 
+| <a href=https://www.reddit.com/user/ohyssssss/>ohyssssss</a> | 6 | 0.2 | 104 | 31 
+| <a href=https://www.reddit.com/user/felibrown2/>felibrown2</a> | 6 | 0.2 | 1399 | 133 
+| <a href=https://www.reddit.com/user/d3vinb/>d3vinb</a> | 6 | 0.2 | 213 | 77
 
-spearman_rho=0.8365601842433079   spearman_p=0.0
-pearson_r=0.6749361615367877   pearson_p=1.6216574146313014e-179
-spearman_rho=0.9167746953590874   spearman_p=1.392563640116421e-23
-pearson_r=0.32848335530484774   pearson_p=0.012606323390768778
+spearman_rho=0.8288774913827227   spearman_p=0.0
+pearson_r=0.5950497757068959   pearson_p=4.055607323151791e-149
+spearman_rho=0.8946729719713885   spearman_p=9.977606973328821e-30
+pearson_r=0.4096320487439156   pearson_p=0.00013261161695326073
 ![Figure](figures/postcount_by_avgscoreperpost.png)
 <Figure size 432x432 with 1 Axes>
 
@@ -131,7 +141,7 @@ One might assume that older submissions tend to have more upvotes and hence, a h
 ![Figure](figures/num_comments_by_scoreNone.png)
 <Figure size 432x432 with 1 Axes>
 
-These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (83%) and it looks like there might be a postive correlation between the two.
+These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (84%) and it looks like there might be a postive correlation between the two.
 
 ![Figure](figures/num_comments_by_scoreNone.png)
 <Figure size 432x432 with 1 Axes>
@@ -195,4 +205,4 @@ What's the average exposure, average upvote ratio for all posters versus the mos
 1. Matplotlib/Seaborn (visualization)
 1. PWeave (CI/CD: this readme)
 
-_This file was compiled on 2021-04-10._
+_This file was compiled on 2021-04-17._
