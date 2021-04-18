@@ -115,13 +115,13 @@ No.
 
 # Results Summary
 For this analysis, I focused on four questions:
-1. When do people post?
+### 1. When do people post?
 On most days, there are between 0 and 14 posts per hour, with most posts happening in the hour before the close of trading in US markets (4-5pm EST).
-2. Who posts?
+### 2. Who posts?
 Most posters created only one post during the obversaion window, with only a minority of posters creating more than 6 posts.
-3. What relationships exist between Reddit's various post-popularity metrics?
+### 3. What relationships exist between Reddit's various post-popularity metrics?
 Most of Reddit's post-popularity metrics are positively correlated and monotonic, with an exception being the relaltionship between upvote ratio and score.
-4. What makes for a popular post?
+### 4. What makes for a popular post?
 Two of the most intuitively likely candidates (post age and the productivity of the poster) had no clear reltaionship with post productivity.
 
 # Future Directions
@@ -129,7 +129,7 @@ In the future, I'm interested in:
 1. Content Analyses -- The current analysis was contain naive, future analyses could examine content (images/text) to see if can be used to predict popularity, to examine meme references, and stock ticker mentions.
 2. Relationships to other datasets, e.g., do stock price swings predict discussions on Reddit, or vice-versa?
 3. Post life cycle -- It might be interesting to examine post popularity over time to identify if post-popularity metrics within the first few hours or minutes of a post predict asympototic popularity.
-4. Investigate whether frequent posters have a less variability as a group in post popularity as compared to one-time posters.
+4. Investigating whether frequent posters have less variability as a group in post popularity as compared to one-time posters.
 
 # About Me
 I'm a software developer, a former academic, and a yoga instructor. My passion is communicating stories with data. I leverage my creativity, deep understanding of problems, and skills to create compelling and meaningful narratives. My strengths are software development, quantitative analysis/visualization, and communicating with non-technical audiences.
