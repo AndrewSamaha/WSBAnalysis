@@ -45,6 +45,7 @@ Figure 2, below, shows the same data aggregated across hours plotted with 95% bo
 
 <Figure size 432x432 with 1 Axes>
 Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis. As can be seen in the figure, the majority of the posts occur less than 5,000 seconds apart, or ~83 minutes. 
+
 ![Figure 3](figures/submissiondeltas.png)
 
 
