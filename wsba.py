@@ -10,6 +10,7 @@ import seaborn as sns
 from datetime import timedelta
 import random
 import numpy as np
+import names as randomname # for redditor anonymization
 #%matplotlib inline
 
 # defining some gloabl variables
@@ -63,7 +64,16 @@ def setup(force=False):
         setup_mongo()
         inited = True
 
-    
+def lookupName(redditor):
+    redditors = db['redditors']
+    fakeName = redditors.find_one({'redditor': redditor})
+    if not fakeName:
+        fakeName = randomname.get_last_name()
+        redditors.insert({'redditor': redditor,'fakeName': fakeName})
+    else:
+        fakeName = fakeName['fakeName']
+    return fakeName
+
 def getnumsubmissions():
     '''
     returns the number of submissions
@@ -160,7 +170,7 @@ def get_authors(show=False, min=0, max=999_999, sortby='rate', returnDictionary=
                 #print(x,round(x['count'],2),round(x['rate'],2),round(x['totalscore'],2),round(x['avgScorePerPost'],2),round(x['avgScorePerDay'],2))
             i += 1
             data['postCount'].append(x['count'])
-            data['posters'].append(x['_id'])
+            data['posters'].append(lookupName(x['_id']))
             data['postRate'].append(x['rate'])
             data['totalScore'].append(x['totalscore'])
             data['totalComments'].append(x['totalcomments'])
