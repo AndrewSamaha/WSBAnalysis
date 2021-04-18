@@ -132,7 +132,7 @@ In the future, I'm interested in:
 4. Investigating whether frequent posters have less variability as a group in post popularity as compared to one-time posters.
 
 # About Me
-I'm a software developer, a former academic, and a yoga instructor. My passion is communicating stories with data. I leverage my creativity, deep understanding of problems, and skills to create compelling and meaningful narratives. My strengths are software development, quantitative analysis/visualization, and communicating with non-technical audiences.
+I'm a software developer, a former academic, and a yoga instructor. My passion is communicating stories with data. I leverage my creativity, deep curiosity of problems, and skills to create compelling and meaningful narratives. My strengths are software development, quantitative analysis/visualization, and communicating with non-technical audiences.
 
 # Technology Stack
 1. Python
