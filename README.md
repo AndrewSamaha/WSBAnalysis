@@ -35,24 +35,24 @@ For this analysis, I focused on four questions:
 
 # When do people post?
 Figure 1, below, shows the total number of posts for each hour. The x-axis is hours in January 1st, 2021 and the y-axis shows the count in each of the plotted hours. Note the extreme outlier -- those took place during a four-hour period on March 24th, 2021 (shortly after 2000 hours on the graph below).<br>
-![Figure 1](figures/posts_per_hour.png)
+![Figure 1](figures/posts_per_hour.png "Figure 1")
 <Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
 
 Figure 2, below, shows the same data aggregated across hours plotted with 95% bootstrapped confidence bands (60k resamples each hour). Note the intra-day pattern, with the lowest frequency of posts occurring between midnight and 9AM UTC. Also note the peak, which appears at 16 UTC or between 4-5pm EST, one hour before market close.<br>
-![Figure 2](figures/avg_posts_per_hour.png)
+![Figure 2](figures/avg_posts_per_hour.png "Figure 2")
 
 <Figure size 432x432 with 1 Axes>
 Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis. As can be seen in the figure, the majority of the posts occur less than 5,000 seconds apart, or ~83 minutes. 
 
-![Figure 3](figures/submissiondeltas.png)
+![Figure 3](figures/submissiondeltas.png "Figure 3")
 
 
 Removing deltas above 5000 gives us a smooth distribution that we can plot in arithmatic space:<br>
-![Figure 4](figures/submissiondeltas_clean.png)
+![Figure 4](figures/submissiondeltas_clean.png "Figure 4")
 <Figure size 432x432 with 1 Axes>
 
 Also, it's worth examining the left-side of the distribution more closely to make sure the geometric shape still holds true at shorter deltas.<br>
-![Figure 5](figures/submissiondeltas_left.png)
+![Figure 5](figures/submissiondeltas_left.png "Figure 5")
 <Figure size 432x432 with 1 Axes>
 
 These data show that the most frequently-occurring interval between submissions is 20 s or less. And it roughly follows an exponential decline, suggesting that post occurrences could be modeled as independent and randomly occurring events.
@@ -61,13 +61,13 @@ These data show that the most frequently-occurring interval between submissions 
 
 A total of 2009 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
 
-![Figure 6](figures/pda_numposts_hist.png)
-![Figure 7](figures/pda_biggestposters.png)
+![Figure 6](figures/pda_numposts_hist.png "Figure 6")
+![Figure 7](figures/pda_biggestposters.png "Figure 7")
 <Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
 
 
 
-
+(Note: Redditor names have been anonymized/sanitized.)
 
 # What relationships exist between Reddit's various post-popularity metrics?
 
