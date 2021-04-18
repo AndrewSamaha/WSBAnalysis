@@ -96,15 +96,20 @@ Interestingly, the relationship between upvote ratio and score is bitonic, which
 Here, I was interesting in two questions that felt intuitively likely:
 1. Are older posts more popular?
 
-<% fig_field_by_age('score',save=True,ymin=1,logy=True, ymedian=True, ymean=True) %>
+<% fig_field_by_age('score',save=True,ymin=1,logy=True, ymedian=False, ymean=False) %>
 
 
-<% fig_field_by_age('upvote_ratio',save=True,ymedian=True, ymean=True) %>
+<% fig_field_by_age('upvote_ratio',save=True,ymedian=False, ymean=False) %>
 
 
-<% fig_field_by_age('num_comments',ymin=1,logy=True,save=True, ymedian=True, ymean=True) %>
+<% fig_field_by_age('num_comments',ymin=1,logy=True,save=True, ymedian=False, ymean=False) %>
+
+Each point in the above figure represents a submission, it's age, and a popularity metric. If a post's popularity increased with age, then then we'd expect to see data point arranged in a increasing pattern. No such pattern is apparent in the data for any of the metrics.
+
 
 2. Are posts by more frequently posters more popular?
+In the figure below, each data point represents a different poster. The data are segregated into two groups: those posting only once during the observation window (represented by the pink data point) and those with 4 or more posts (represented by the blue data point). If frequent posters were associated with more popularity, then we'd expect to see the data points either above the pink or arranged at a steeper incline. However, that is not the case. In fact, frequent posters appear exactly in the middle of the one-time poster distribution. Perhaps the variability in frequent posters is smaller, however that's difficult to see visually given the relatively smaller sample size of the group.
+
 <% compare_posters() %>
 
 
@@ -127,9 +132,10 @@ In the future, I'm interested in:
 1. Content Analyses -- The current analysis was contain naive, future analyses could examine content (images/text) to see if can be used to predict popularity, to examine meme references, and stock ticker mentions.
 2. Relationships to other datasets, e.g., do stock price swings predict discussions on Reddit, or vice-versa?
 3. Post life cycle -- It might be interesting to examine post popularity over time to identify if post-popularity metrics within the first few hours or minutes of a post predict asympototic popularity.
+4. Investigate whether frequent posters have a less variability as a group in post popularity as compared to one-time posters.
 
 # About Me
-I'm a recovering academic, a yoga instructor, and software developer. My passion is communicating stories with data. I leverage my creativity, deep understanding of problems, and skills to create compelling and meaningful narratives. My strengths are software development, quantitative analysis/visualization, and communicating with non-technical audiences.
+I'm a software developer, a former academic, and a yoga instructor. My passion is communicating stories with data. I leverage my creativity, deep understanding of problems, and skills to create compelling and meaningful narratives. My strengths are software development, quantitative analysis/visualization, and communicating with non-technical audiences.
 
 # Technology Stack
 1. Python
