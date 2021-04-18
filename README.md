@@ -1,21 +1,13 @@
 # WSBAnalysis
 An analysis of posts on r/WallStreetBets
 
-# Background
-In the January 2021, a large group of individual investors held together by an online forums (r/WallStreetBets) pushed a stock (GME) from a modest $17/share to $347/share. This was considered noteworthy because a) institutional investors had signaled the company was overvalued and were shorting it and b) those institutional investors lost a significant amount of money, with one allegedly going bankrupt.
-
-See also [Building an algorithmic trading strategy with r/wallstreetbets discussion data](https://www.reddit.com/r/algotrading/comments/lmtp17/building_an_algorithmic_trading_strategy_with/)
-
-Hence, the structure of this online community is worthy of investigation because of its ability to steer the behavior of a large number of invidivual investors in a way that negates contrary messaging of top-down institutional decision makers and actors. With that in mind, the purpose of this investigation is to gain an understanding of the structure of the online community, how it communicates about stock, how messages about stocks disseminate and maintain in the discourse, and so on.
-
-# Standup
-I'm interested in understanding posting and post-popularity in WallStreetBets. WallStreetBets is online community of individual and often unruly investors. Their communication style is very meme-driven and they are very anti-establishment. They value underdogs, individual investors, over 'tranditional' institutions and their research products. When they as a group, they can have surprising effects on the market, e.g., Game Stop. 
+I'm interested in understanding posting and post-popularity in WallStreetBets. WallStreetBets is online community of individual and often unruly investors. Their communication style is meme-driven and often provocative. Their values are pro-underdogs and anti-establishment. When they as a group, they can have surprising effects on the market, e.g., Game Stop. 
 
 
 
-# The Data
+# The Dataset
 
-As of 04/17/21, the dataset consisted of 2853 submissions to r/WallStreetBets from a period of 29.95883101851852 days beginning 03/18/21 and ending 04/17/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 04/17/21, the dataset consisted of 2853 submissions to r/WallStreetBets from a period of 30.0 days beginning 03/18/21 and ending 04/17/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -36,77 +28,107 @@ A Sample:
 }
 ```
 
-# The authors
+# Questions
+For this analysis, I focused on four questions:
+1. When do people post?
+1. Who posts?
+1. What relationships exist between Reddit's various post-popularity metrics?
+1. What makes for a popular post?
+
+# When do people post?
+Figure 1, below, shows the total number of posts for each hour. The x-axis is hours in January 1st, 2021 and the y-axis shows the count in each of the plotted hours. Note the extreme outlier -- those took place during a four-hour period on March 24th, 2021 (shortly after 2000 hours on the graph below).<br>
+![Figure 1](figures/posts_per_hour.png)
+<Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
+
+Figure 2, below, shows the same data aggregated across hours plotted with 95% bootstrapped confidence bands (60k resamples each hour). Note the intra-day pattern, with the lowest frequency of posts occurring between midnight and 9AM UTC. Also note the peak, which appears at 16 UTC or between 4-5pm EST, one hour before market close.<br>
+![Figure 2](figures/avg_posts_per_hour.png)
+
+Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis. As can be seen in the figure, the majority of the posts occur less than 5,000 seconds apart, or ~83 minutes. 
+![Figure 3](figures/submissiondeltas.png)
+<Figure size 432x432 with 1 Axes>
+
+Removing deltas above 5000 gives us a smooth distribution that we can plot in arithmatic space:<br>
+![Figure 4](figures/submissiondeltas_clean.png)
+<Figure size 432x432 with 1 Axes>
+
+Also, it's worth examining the left-side of the distribution more closely to make sure the geometric shape still holds true at shorter deltas.<br>
+![Figure 5](figures/submissiondeltas_left.png)
+<Figure size 432x432 with 1 Axes>
+
+These data show that the most frequently-occurring interval between submissions is 20 s or less. And it roughly follows an exponential decline, suggesting that post occurrences could be modeled as independent and randomly occurring events.
+
+# Who posts?
+
 A total of 1992 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
-![Figure 1](figures/pda_numposts.png)
-![Figure 2](figures/pda_numposts_hist.png)
-![Figure 3](figures/pda_biggestposters.png)
+
+![Figure 6](figures/pda_numposts_hist.png)
+![Figure 7](figures/pda_biggestposters.png)
 <Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
 
-| Poster | Post Count | Posts/Day | Avg Score/Post | Avg Comments/Post |
-|--------|------------|-----------|----------------|-------------------|
-| <a href=https://www.reddit.com/user/OPINION_IS_UNPOPULAR/>OPINION_IS_UNPOPULAR</a> | 92 | 3.07 | 6837 | 16717 
-| <a href=https://www.reddit.com/user/pdwp90/>pdwp90</a> | 20 | 0.67 | 1323 | 133 
-| <a href=https://www.reddit.com/user/AutoModerator/>AutoModerator</a> | 20 | 0.67 | 0 | 1515 
-| <a href=https://www.reddit.com/user/disgruntledbkbum/>disgruntledbkbum</a> | 18 | 0.6 | 65 | 41 
-| <a href=https://www.reddit.com/user/Jesus_Gains_Christ/>Jesus_Gains_Christ</a> | 17 | 0.57 | 97 | 56 
-| <a href=https://www.reddit.com/user/CMScientist/>CMScientist</a> | 14 | 0.47 | 465 | 96 
-| <a href=https://www.reddit.com/user/GrubbyWango/>GrubbyWango</a> | 11 | 0.37 | 105 | 46 
-| <a href=https://www.reddit.com/user/Anal_Chem/>Anal_Chem</a> | 11 | 0.37 | 8572 | 234 
-| <a href=https://www.reddit.com/user/ryldyl/>ryldyl</a> | 10 | 0.33 | 183 | 37 
-| <a href=https://www.reddit.com/user/dvdgelman7/>dvdgelman7</a> | 9 | 0.3 | 130 | 80 
-| <a href=https://www.reddit.com/user/Citor3_scenes/>Citor3_scenes</a> | 8 | 0.27 | 758 | 151 
-| <a href=https://www.reddit.com/user/bettercallsaully/>bettercallsaully</a> | 8 | 0.27 | 38 | 30 
-| <a href=https://www.reddit.com/user/TheGreenJoeblin/>TheGreenJoeblin</a> | 8 | 0.27 | 41 | 24 
-| <a href=https://www.reddit.com/user/GmeCalls-UrWifesBf/>GmeCalls-UrWifesBf</a> | 8 | 0.27 | 2447 | 263 
-| <a href=https://www.reddit.com/user/ConditionNeither/>ConditionNeither</a> | 7 | 0.23 | 32 | 13 
-| <a href=https://www.reddit.com/user/wiserone29/>wiserone29</a> | 7 | 0.23 | 73 | 36 
-| <a href=https://www.reddit.com/user/628rand/>628rand</a> | 7 | 0.23 | 45 | 11 
-| <a href=https://www.reddit.com/user/DanyeelsAnulmint/>DanyeelsAnulmint</a> | 7 | 0.23 | 3277 | 264 
-| <a href=https://www.reddit.com/user/indonesian_activist/>indonesian_activist</a> | 6 | 0.2 | 1258 | 114 
-| <a href=https://www.reddit.com/user/moazzam0/>moazzam0</a> | 6 | 0.2 | 3302 | 316 
-| <a href=https://www.reddit.com/user/BrigadorskiBanhammer/>BrigadorskiBanhammer</a> | 6 | 0.2 | 184 | 60 
-| <a href=https://www.reddit.com/user/Algeroth81/>Algeroth81</a> | 6 | 0.2 | 23 | 17 
-| <a href=https://www.reddit.com/user/prettyboyv/>prettyboyv</a> | 6 | 0.2 | 2815 | 313 
-| <a href=https://www.reddit.com/user/Tradergurue/>Tradergurue</a> | 6 | 0.2 | 998 | 84 
-| <a href=https://www.reddit.com/user/No-Bandicoot-8980/>No-Bandicoot-8980</a> | 6 | 0.2 | 10178 | 411 
-| <a href=https://www.reddit.com/user/Professional_War1998/>Professional_War1998</a> | 6 | 0.2 | 201 | 58 
-| <a href=https://www.reddit.com/user/ohyssssss/>ohyssssss</a> | 6 | 0.2 | 104 | 31 
-| <a href=https://www.reddit.com/user/felibrown2/>felibrown2</a> | 6 | 0.2 | 1399 | 133 
-| <a href=https://www.reddit.com/user/d3vinb/>d3vinb</a> | 6 | 0.2 | 213 | 77
 
+
+
+
+# What relationships exist between Reddit's various post-popularity metrics?
+
+![Figure](figures/num_comments_by_scoreNone.png)
+<Figure size 432x432 with 1 Axes>
+
+These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (84%) and it looks like there might be a postive correlation between the two.
+
+![Figure](figures/num_comments_by_upvote_ratio_logxNone.png)
+<Figure size 432x432 with 1 Axes>
+The relationship between score and upvote ratio is a monotonicly incresing, negatively accelerated function.
+
+![Figure](figures/score_by_upvote_ratio_logxNone.png)
+<Figure size 432x432 with 1 Axes>
+Interestingly, the relationship between upvote ratio and score is bitonic, which is to say that score and upvote ratio increase together and then at some point, that relationship reverses: For example, posts with the most up votes are likely to have a higher proportion of down votes than posts with only somewhat fewer upvotes. Perhaps posts that attract the most upvotes are exceptionally controversial, and therefore likely to obtain proportionally fewer votes than slightly less popular posts. Or maybe, as posts become more popular, they attract more dissenters and contrarians.
+
+
+# What makes for a popular post?
+Here, I was interesting in two questions that felt intuitively likely:
+1. Are older posts more popular?
+![Figure](figures/score_by_age_logy.png)
+<Figure size 432x432 with 1 Axes>
+![Figure](figures/upvote_ratio_by_age.png)
+<Figure size 432x432 with 1 Axes>
+![Figure](figures/num_comments_by_age_logy.png)
+<Figure size 432x432 with 1 Axes>
+
+1. Are posts by more frequently posters more popular?
 spearman_rho=0.8288774913827227   spearman_p=0.0
-pearson_r=0.5950497757068959   pearson_p=4.055607323151791e-149
+pearson_r=0.5950497757068958   pearson_p=4.055607323151791e-149
 spearman_rho=0.8946729719713885   spearman_p=9.977606973328821e-30
 pearson_r=0.4096320487439156   pearson_p=0.00013261161695326073
 ![Figure](figures/postcount_by_avgscoreperpost.png)
 <Figure size 432x432 with 1 Axes>
 
-# Some Initial Observations
+
+No.
+
 1. Stocks are sometimes written in capital letters in the middle of a word
 1. Stocks are sometimes written beginning with a $ and ending with a space
 1. Only one of the big authors is a bot (AutoModerator) as determined by visual inspection of their posts.
 
-# Posts Per Hour
-Below is a graph of the total number of posts for each hour. Note the extreme outlier -- those took place during a four-hour period on March 24th, 2021 (shortly after 2000 hours on the graph below).<br>
-![Figure 3](figures/posts_per_hour.png)
-<Figure size 432x432 with 1 Axes><Figure size 432x432 with 1 Axes>
+# Results Summary
+For this analysis, I focused on four questions:
+### 1. When do people post?
+On most days, there are between 0 and 14 posts per hour, with most posts happening in the hour before the close of trading in US markets (4-5pm EST).
+### 2. Who posts?
+Most posters created only one post during the obversaion window, with only a minority of posters creating more than 6 posts.
+### 3. What relationships exist between Reddit's various post-popularity metrics?
+Most of Reddit's post-popularity metrics are positively correlated and monotonic, with an exception being the relaltionship between upvote ratio and score.
+### 4. What makes for a popular post?
+Two of the most intuitively likely candidates (post age and the productivity of the poster) had no clear reltaionship with post productivity.
 
-Here are the same data aggregated across hours plotted with 95% bootstrapped confidence bands (60k resamples each hour). Note the intra-day pattern, with the lowest frequency of posts occurring between midnight and 9AM UTC.<br>
-![Figure 3](figures/avg_posts_per_hour.png)
+# Future Directions
+
+# Posts Per Hour
+
+
 
 # Analysis of Submission Post Times
-Below is a histogram of submission deltas (seconds between posts) plotted with a log y-axis. As can be seen in the figure, the majority of the posts occur less than 5,000 seconds apart, or ~83 minutes. 
-![Figure 4](figures/submissiondeltas.png)
-<Figure size 432x432 with 1 Axes>
 
-Removing deltas above 5000 gives us a smooth distribution that we can plot in arithmatic space:<br>
-![Figure 5](figures/submissiondeltas_clean.png)
-<Figure size 432x432 with 1 Axes>
-
-Also, it's worth examining the left-side of the distribution more closely to make sure the geometric shape still holds true at shorter deltas.<br>
-![Figure 6](figures/submissiondeltas_left.png)
-<Figure size 432x432 with 1 Axes>
 
 # Submission Impact EDA
 There seem to be at least three measures related to the impact of each submission:
@@ -138,10 +160,7 @@ One might assume that older submissions tend to have more upvotes and hence, a h
 
 ## Score vs Num Comments
 
-![Figure](figures/num_comments_by_scoreNone.png)
-<Figure size 432x432 with 1 Axes>
 
-These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (84%) and it looks like there might be a postive correlation between the two.
 
 ![Figure](figures/num_comments_by_scoreNone.png)
 <Figure size 432x432 with 1 Axes>
@@ -168,8 +187,6 @@ And adding in the entire range of data, we can see the effect of the previously 
 ![Figure](figures/num_comments_by_upvote_ratio4000.png)
 <Figure size 432x432 with 1 Axes>
 
-![Figure](figures/num_comments_by_upvote_ratio_logxNone.png)
-<Figure size 432x432 with 1 Axes>
 
 ## Upvote Ratio vs. Score
 
@@ -179,8 +196,6 @@ And adding in the entire range of data, we can see the effect of the previously 
 ![Figure](figures/score_by_upvote_ratio4000.png)
 <Figure size 432x432 with 1 Axes>
 
-![Figure](figures/score_by_upvote_ratio_logxNone.png)
-<Figure size 432x432 with 1 Axes>
 
 # Next Steps
 FIT THE DATA TO AN EXPONENTIAL DISTRIBUTION (or, geometric???)
