@@ -106,7 +106,7 @@ Here, I was interesting in two questions that felt intuitively likely:
 
 <% fig_field_by_age('num_comments',ymin=1,logy=True,save=True, ymedian=True, ymean=True) %>
 
-1. Are posts by more frequently posters more popular?
+2. Are posts by more frequently posters more popular?
 <% compare_posters() %>
 
 

@@ -102,7 +102,7 @@ Here, I was interesting in two questions that felt intuitively likely:
 ![Figure](figures/num_comments_by_age_logy.png)
 <Figure size 432x432 with 1 Axes>
 
-1. Are posts by more frequently posters more popular?
+2. Are posts by more frequently posters more popular?
 ![Figure](figures/postcount_by_avgscoreperpost.png)
 <Figure size 432x432 with 1 Axes>
 
