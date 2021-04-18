@@ -115,13 +115,13 @@ No.
 
 # Results Summary
 For this analysis, I focused on four questions:
-### 1. When do people post?
+#### 1. When do people post?
 On most days, there are between 0 and 14 posts per hour, with most posts happening in the hour before the close of trading in US markets (4-5pm EST).
-### 2. Who posts?
+#### 2. Who posts?
 Most posters created only one post during the obversaion window, with only a minority of posters creating more than 6 posts.
-### 3. What relationships exist between Reddit's various post-popularity metrics?
+#### 3. What relationships exist between Reddit's various post-popularity metrics?
 Most of Reddit's post-popularity metrics are positively correlated and monotonic, with an exception being the relaltionship between upvote ratio and score, which appears to be bi-tonic: increasing to a point and then decreasing.
-### 4. What makes for a popular post?
+#### 4. What makes for a popular post?
 Two of the most intuitively likely candidates (post age and the productivity of the poster) had no clear reltaionship with post productivity.
 
 # Future Directions
