@@ -102,10 +102,6 @@ Here, I was interesting in two questions that felt intuitively likely:
 <Figure size 432x432 with 1 Axes>
 
 1. Are posts by more frequently posters more popular?
-spearman_rho=0.8288774913827227   spearman_p=0.0
-pearson_r=0.5950497757068958   pearson_p=4.055607323151791e-149
-spearman_rho=0.8946729719713885   spearman_p=9.977606973328821e-30
-pearson_r=0.4096320487439156   pearson_p=0.00013261161695326073
 ![Figure](figures/postcount_by_avgscoreperpost.png)
 <Figure size 432x432 with 1 Axes>
 

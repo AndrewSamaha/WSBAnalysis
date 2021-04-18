@@ -711,12 +711,12 @@ def graph_user_scores(data=None, fig=None, ax=None, xfield='postRate', yfield='t
     
     if spearman:
         spearman_rho, spearman_p = stats.spearmanr(a=x, b=y)
-        if not printRegression:
+        if printRegression:
             print(f'spearman_rho={spearman_rho}   spearman_p={spearman_p}')
     
     if pearson:
         pearson_r, pearson_p = stats.pearsonr(x=x, y=y)
-        if not printRegression:
+        if printRegression:
             print(f'pearson_r={pearson_r}   pearson_p={pearson_p}')
     
     lr_m=0
@@ -728,7 +728,7 @@ def graph_user_scores(data=None, fig=None, ax=None, xfield='postRate', yfield='t
         lr_m, lr_b, lr_r, lr_p, lr_stredd = stats.linregress(x, y)
         def lr(x):
             return lr_m * x + lr_b
-        if not printRegression:
+        if printRegression:
             print("regression; pearson r: ", lr_r, lr_p, lr_stredd)
     
     if fig == None and ax == None:
@@ -744,7 +744,7 @@ def graph_user_scores(data=None, fig=None, ax=None, xfield='postRate', yfield='t
             c='red',
             linestyle='--'
         )
-        if not printRegression:
+        if printRegression:
             print([min(x),max(x)])
             print([lr_m * min(x) + lr_b,lr_m * max(x) + lr_b])
     ax.set_xlabel(xfield)
