@@ -140,8 +140,8 @@ I'm a software developer, a former academic, and a yoga instructor. My passion i
 # Technology Stack
 1. Python
 1. Jupyter Labs (pda/eda)
-1. WSBScraper/MongoDB/Docker (backend)
-1. Matplotlib/Seaborn (visualization)
-1. PWeave, build.sh (CI/CD: this readme)
+1. WSBScraper, MongoDB, Docker (backend)
+1. Matplotlib, Seaborn (visualization)
+1. PWeave, Bash (CI/CD: this readme)
 
 _This file was compiled on <%print(datetime.date.today())%>._
