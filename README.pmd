@@ -93,6 +93,8 @@ The first set looks like the biggest (n = <%= round(count({'score': {'$lte':2000
 <% fig_field_by_field('num_comments','score',fielda_max=2_000,xmin=1,ymin=1,logx=True,logy=True,mean=True,median=True,spearman=True,pearson=True,regression=True, save=True) %>
 This figure shows a clear correlation between the logs of the score and number of comments.
 
+Now, let's turn our attention back toward the remaining comparisons:
+
 <% fig_field_by_field('num_comments','upvote_ratio',logx=True,xmin=1,median=True,mean=True,save=True) %>
 The relationship between score and upvote ratio is a monotonicly incresing, negatively accelerated function.
 

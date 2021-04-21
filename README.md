@@ -85,6 +85,8 @@ The first set looks like the biggest (n = 84%), so let's focus on those for now 
 <Figure size 432x432 with 1 Axes>
 This figure shows a clear correlation between the logs of the score and number of comments.
 
+Now, let's turn our attention back toward the remaining comparisons:
+
 ![Figure](figures/num_comments_by_upvote_ratio_logxNone.png)
 <Figure size 432x432 with 1 Axes>
 The relationship between score and upvote ratio is a monotonicly incresing, negatively accelerated function.
