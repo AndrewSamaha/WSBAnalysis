@@ -74,7 +74,16 @@ A total of 2088 submission authors are represented in the data. The plot below s
 ![Figure](figures/num_comments_by_scoreNone.png)
 <Figure size 432x432 with 1 Axes>
 
-These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (84%) and it looks like there might be a postive correlation between the two.
+These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points:
+1. A set there the number of comments remains relatively low but there can be very high scores.
+2. A set there the score is around 20-25k through a big range of comments.
+3. A set where the scores are relatively low but there is a big range of number of comments.
+
+The first set looks like the biggest (n = 84%), so let's focus on those for now by truncating the set to those with fewer than 2000 comments:
+
+![Figure](figures/num_comments_by_score_logx_logyNone.png)
+<Figure size 432x432 with 1 Axes>
+This figure shows a clear correlation between the logs of the score and number of comments.
 
 ![Figure](figures/num_comments_by_upvote_ratio_logxNone.png)
 <Figure size 432x432 with 1 Axes>
@@ -130,6 +139,7 @@ In the future, I'm interested in:
 2. Relationships to other datasets, e.g., do stock price swings predict discussions on Reddit, or vice-versa?
 3. Post life cycle -- It might be interesting to examine post popularity over time to identify if post-popularity metrics within the first few hours or minutes of a post predict asympototic popularity.
 4. Investigating whether frequent posters have less variability as a group in post popularity as compared to one-time posters.
+5. Examine those three clusters of points in the post-popularity comparison between score and number of comments.
 
 # About Me
 I'm a software developer, a former academic, and a yoga instructor. My passion is communicating stories with data. I leverage my creativity, deep curiosity of problems, and skills to create compelling and meaningful narratives. My strengths are software development, quantitative analysis/visualization, and communicating with non-technical audiences.
