@@ -5,7 +5,7 @@ I'm interested in understanding posting and post-popularity in WallStreetBets. W
 
 # The Dataset
 
-As of 04/18/21, the dataset consisted of 2884 submissions to r/WallStreetBets from a period of 31.1 days beginning 03/18/21 and ending 04/18/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 04/20/21, the dataset consisted of 3016 submissions to r/WallStreetBets from a period of 33.2 days beginning 03/18/21 and ending 04/20/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -59,7 +59,7 @@ These data show that the most frequently-occurring interval between submissions 
 
 # Who posts?
 
-A total of 2009 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
+A total of 2088 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
 
 ![Figure 6](figures/pda_numposts_hist.png "Figure 6")
 ![Figure 7](figures/pda_biggestposters.png "Figure 7")
@@ -74,7 +74,7 @@ A total of 2009 submission authors are represented in the data. The plot below s
 ![Figure](figures/num_comments_by_scoreNone.png)
 <Figure size 432x432 with 1 Axes>
 
-These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (83%) and it looks like there might be a postive correlation between the two.
+These figures show the relationship between a submission's score and the number of comments it's received. The figure seems to show three clusters of data points. For now, let's focus on those happening in scores less than 2000, as this seems to be the majority of submissions (84%) and it looks like there might be a postive correlation between the two.
 
 ![Figure](figures/num_comments_by_upvote_ratio_logxNone.png)
 <Figure size 432x432 with 1 Axes>
@@ -141,4 +141,4 @@ I'm a software developer, a former academic, and a yoga instructor. My passion i
 1. Matplotlib, Seaborn (visualization)
 1. PWeave, Bash (CI/CD: this readme)
 
-_This file was compiled on 2021-04-18._
+_This file was compiled on 2021-04-20._
