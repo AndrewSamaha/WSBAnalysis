@@ -11,12 +11,52 @@ from datetime import timedelta
 import random
 import numpy as np
 import names as randomname # for redditor anonymization
+import pandas as pd
 #%matplotlib inline
 
 # defining some gloabl variables
 inited = False
 db = None
 wsbs = None
+
+def fields_to_df(fielda='num_comments', fieldb='score', fieldc='upvote_ratio', fielda_max=None, logx=False, logy=False, save=False, ymax=None, ymin=None, median=False, mean=False, xmax=None, xmin=None, spearman=None, pearson=None, regression=None, minimum_val=None):
+    '''
+    returns the filename of a figure where some field is plotted 
+    as a function of the age of the post in minutes
+    '''
+    age = wsbs.aggregate( [ 
+        {
+            '$project': {
+                f'{fielda}': 1,
+                f'{fieldb}': 1,
+                f'{fieldc}': 1
+            }
+        }
+    ] )
+    
+    i = 0
+    fielda_data = []
+    fieldb_data = []
+    fieldc_data = []
+    for item in age:
+        if fielda_max and item[fielda] > fielda_max:
+            continue
+        if minimum_val:
+            if item[fielda] < minimum_val:
+                continue
+            if item[fieldb] < minimum_val:
+                continue
+            #if item[fieldc] < minimum_val:
+            #    continue
+        i += 1
+        fielda_data.append(item[fielda])
+        fieldb_data.append(item[fieldb])
+        fieldc_data.append(item[fieldc])
+    
+    df = pd.DataFrame(fielda_data, columns=[fielda])
+    df[fieldb] = pd.DataFrame(fieldb_data, columns=[fieldb])
+    df[fieldc] = pd.DataFrame(fieldc_data, columns=[fieldc])
+    return df
 
 def setup_seaborn():
     # Pilfered from https://towardsdatascience.com/making-matplotlib-beautiful-by-default-d0d41e3534fd
