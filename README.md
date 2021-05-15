@@ -5,7 +5,7 @@ I'm interested in understanding posting and post-popularity in WallStreetBets. W
 
 # The Dataset
 
-As of 05/06/21, the dataset consisted of 4160 submissions to r/WallStreetBets from a period of 49.2 days beginning 03/18/21 and ending 05/06/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 05/15/21, the dataset consisted of 4973 submissions to r/WallStreetBets from a period of 57.9 days beginning 03/18/21 and ending 05/15/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -59,7 +59,7 @@ These data show that the most frequently-occurring interval between submissions 
 
 # Who posts?
 
-A total of 2827 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
+A total of 3327 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
 
 ![Figure 6](figures/pda_numposts_hist.png "Figure 6")
 ![Figure 7](figures/pda_biggestposters.png "Figure 7")
@@ -79,7 +79,7 @@ These figures show the relationship between a submission's score and the number 
 2. A set there the score is around 20-25k through a big range of comments.
 3. A set where the scores are relatively low but there is a big range of number of comments.
 
-The first set looks like the biggest (n = 86%), so let's focus on those for now by truncating the set to those with fewer than 2000 comments:
+The first set looks like the biggest (n = 87%), so let's focus on those for now by truncating the set to those with fewer than 2000 comments:
 
 ![Figure](figures/num_comments_by_score_logx_logyNone.png)
 <Figure size 432x432 with 1 Axes>
@@ -153,4 +153,4 @@ I'm a software developer, a former academic, and a yoga instructor. My passion i
 1. Matplotlib, Seaborn (visualization)
 1. PWeave, Bash (CI/CD: this readme)
 
-_This file was compiled on 2021-05-06._
+_This file was compiled on 2021-05-15._
