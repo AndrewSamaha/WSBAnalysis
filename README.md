@@ -5,7 +5,7 @@ I'm interested in understanding posting and post-popularity in WallStreetBets. W
 
 # The Dataset
 
-As of 05/15/21, the dataset consisted of 4973 submissions to r/WallStreetBets from a period of 57.9 days beginning 03/18/21 and ending 05/15/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
+As of 05/19/21, the dataset consisted of 5203 submissions to r/WallStreetBets from a period of 62.2 days beginning 03/18/21 and ending 05/19/21. These were scraped using the Reddit API and a tool I developed, [WSBScraper](https://github.com/AndrewSamaha/WSBScraper), which saves posts to a MongoDB.
 
 A Sample:
 ```
@@ -59,7 +59,7 @@ These data show that the most frequently-occurring interval between submissions 
 
 # Who posts?
 
-A total of 3327 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
+A total of 3438 submission authors are represented in the data. The plot below shows a histogram of the authors ranked from most to lease posts. Note the vast majority of posters only posted once during the time period. Conversely, a minority of posters contributed 6 or more posts.
 
 ![Figure 6](figures/pda_numposts_hist.png "Figure 6")
 ![Figure 7](figures/pda_biggestposters.png "Figure 7")
@@ -153,4 +153,4 @@ I'm a software developer, a former academic, and a yoga instructor. My passion i
 1. Matplotlib, Seaborn (visualization)
 1. PWeave, Bash (CI/CD: this readme)
 
-_This file was compiled on 2021-05-15._
+_This file was compiled on 2021-05-19._
